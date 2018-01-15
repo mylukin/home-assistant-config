@@ -1,0 +1,12 @@
+weather:
+  name: 天气情况
+  entities:
+    - sensor.moji_weather_current
+    - sensor.moji_weather_condition
+    - sensor.moji_weather_temperature
+    - sensor.moji_weather_temperature_max
+    - sensor.moji_weather_temperature_min
+    - sensor.moji_weather_humidity
+    - sensor.moji_weather_air_quality
+    - sensor.moji_weather_wind_grade
+    - sensor.moji_weather_tips

@@ -1,0 +1,9 @@
+switch.printer_switch_for_xiaomi:
+  friendly_name: 小米插座
+  hidden: true
+  homebridge_hidden: false
+
+switch.printer_switch_for_xiaomi_usb:
+  friendly_name: 小米插座USB接口
+  hidden: true
+  homebridge_hidden: false

@@ -1,0 +1,32 @@
+- alias: 'Notify Sunrise'
+  trigger:
+    platform: sun
+    event: sunrise
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.7
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: >-
+          {{ [
+            "太阳出来了，享受一下阳光吧",
+            "公鸡啼，小鸟叫，太阳出来了",
+            "看，太阳出来了，感伤都该睡了",
+            "看，太阳出来了，世界又在变了",
+            "看，太阳出来了，远方都放晴了",
+            "看，太阳出来了，勇气又发芽了",
+          ] | random -}}
+
+          {%- if not is_state('sensor.moji_weather_current', '晴') and not is_state('sensor.moji_weather_current', '多云') -%}
+            ，可惜当前天气是{{ states('sensor.moji_weather_current') }}，并看不到太阳。
+          {%- endif -%}
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    - service: shell_command.set_volume_to_pre

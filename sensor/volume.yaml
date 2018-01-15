@@ -1,0 +1,4 @@
+- platform: command_line
+  name: Ubuntu Pre Volume
+  command: /bin/bash ./shell_scripts/get_pre_volume.sh
+  scan_interval: 10

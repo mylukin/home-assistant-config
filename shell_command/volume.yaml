@@ -1,0 +1,11 @@
+# 保存当前音量
+save_current_volume: >-
+  amixer | grep 'Playback' | awk 'NR==3{print $5}'| sed 's/[^0-9]//g' > /var/run/pre_volume.data
+
+# 调整音量为最大
+set_volume_to_max: >-
+  amixer -c 0 sset 'Master',0 75%,75% unmute && amixer -c 0 sset 'PCM',0 75% unmute;
+
+# 调整回原来的音量
+set_volume_to_pre: >-
+  amixer -c 0 sset 'Master',0 {{ states('sensor.ubuntu_pre_volume') }}%,{{ states('sensor.ubuntu_pre_volume') }}% unmute && amixer -c 0 sset 'PCM',0 {{ states('sensor.ubuntu_pre_volume') }}% unmute

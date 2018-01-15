@@ -1,0 +1,6 @@
+- platform: command_line
+  name: CPU Temperature
+  friendly_name: CPU 温度
+  command: >-
+    [ -f $(which sensors) ] && $(which sensors) | grep 'Core 0' | awk '{print $3}' | sed 's/\+//g' | sed 's/\.0°C//g'
+  unit_of_measurement: "°C"

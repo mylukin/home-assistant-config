@@ -1,0 +1,6 @@
+temperature:
+  name: 温度湿度
+  entities:
+    - sensor.cpu_temperature
+    - sensor.home_temperature
+    - sensor.home_humidity

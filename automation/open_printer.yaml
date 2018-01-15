@@ -1,0 +1,83 @@
+# 打印机接到任务，如果发现未开启，自动开启
+- alias: 'Auto Open Printer'
+  trigger:
+    platform: state
+    entity_id: sensor.canon_lbp6030w_6018w
+    to: 'printing'
+
+  condition:
+    # 打印机插座的状态
+    - condition: state
+      entity_id: switch.printer_switch_for_xiaomi
+      state: 'off'
+
+    # 打印机状态
+    - condition: state
+      entity_id: device_tracker.canonc8b1e0lan
+      state: 'not_home'
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.7
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: 正在开启打印机，请等待...
+
+    # 开启打印机电源
+    - service: switch.turn_on
+      data:
+        entity_id: switch.printer_switch_for_xiaomi
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    - service: shell_command.set_volume_to_pre
+
+# 打印机闲置20分钟，自动关闭电源
+- alias: 'Auto Close Printer'
+  trigger:
+    platform: state
+    entity_id: sensor.canon_lbp6030w_6018w
+    to: 'idle'
+
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
+
+  condition:
+    # 打印机插座的状态
+    - condition: state
+      entity_id: switch.printer_switch_for_xiaomi
+      state: 'on'
+
+    # 打印机状态
+    - condition: state
+      entity_id: device_tracker.canonc8b1e0lan
+      state: 'home'
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.7
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: 打印机空闲超过20分钟，正在关闭打印机...
+
+    # 关闭打印机电源
+    - service: switch.turn_off
+      data:
+        entity_id: switch.printer_switch_for_xiaomi
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    - service: shell_command.set_volume_to_pre
+

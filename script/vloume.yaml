@@ -1,0 +1,14 @@
+set_vlc_volume:
+  alias: 设置VLC音量
+  sequence:
+    - service: shell_command.save_current_volume
+    - service: shell_command.set_volume_to_max
+    - service: media_player.volume_set
+      entity_id: media_player.speaker_vlc
+      data_template:
+        volume_level: >-
+          {% if value -%}
+          {{ value }}
+          {%- else -%}
+          1
+          {%- endif %}

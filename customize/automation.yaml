@@ -1,0 +1,26 @@
+automation.notify_sunrise:
+  friendly_name: 通知日出
+
+automation.notify_sunset:
+  friendly_name: 通知日落
+
+automation.notify_luvis_for_to_school:
+  friendly_name: 提醒卢想上学校
+
+automation.notify_luvis_for_wake_up:
+  friendly_name: 提醒卢想起床了
+
+automation.notify_weather:
+  friendly_name: 天气情况提醒：周一到周五
+
+automation.notify_weather_2:
+  friendly_name: 天气情况提醒：周六、周日
+
+automation.auto_open_printer:
+  friendly_name: 自动打开打印机
+
+automation.auto_close_printer:
+  friendly_name: 空闲自动关闭打印机
+
+automation.lukin_comeback:
+  friendly_name: Lukin回家了

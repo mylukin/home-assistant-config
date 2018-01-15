@@ -1,0 +1,28 @@
+- alias: 'Notify Sunset'
+  trigger:
+    platform: sun
+    event: sunset
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.7
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: >-
+          {{ [
+            "不要忧伤太阳的离去，她正在地球的另一角落冉冉升起。",
+            "慢慢地，慢慢地太阳掉到了地平线以下。",
+            "太阳像一个害羞的小姑娘，向大地母亲的身后躲去。",
+            "渐渐的，夕阳收敛起他最后的光芒，还来不及说一声再见，便垂下头去，合上了双眼，静静地睡去了。",
+            "日落带来希望之美，也赋予伤悲之美。",
+            "太阳终于最后跳动几下，然后便一头扎进地平线，霎时间，一切成了灰黑色。",
+          ] | random -}}
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    - service: shell_command.set_volume_to_pre
