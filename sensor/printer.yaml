@@ -1,0 +1,7 @@
+- platform: cups
+  name: Printer Queue
+  host: 192.168.199.8
+  port: 631
+  printers:
+    - Canon_LBP6030w_6018w
+  scan_interval: 1

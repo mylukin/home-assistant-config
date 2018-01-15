@@ -1,0 +1,50 @@
+# 模拟布谷鸟时钟，整点、半点报时
+- alias: Cuckoo Clock
+  trigger:
+    - platform: time
+      minutes: 00
+      seconds: 10
+    - platform: time
+      minutes: 30
+      seconds: 10
+
+  condition:
+    condition: or
+    conditions:
+      # 周一到周五
+      - condition: time
+        after: '07:00:00'
+        before: '21:30:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      # 周六、周日
+      - condition: time
+        after: '08:00:00'
+        before: '22:00:00'
+        weekday:
+          - sat
+          - sun
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 1
+
+    - service: media_player.play_media
+      data_template:
+        entity_id: media_player.speaker_vlc
+        media_content_id: >
+          {% if now().strftime("%M")|int == 30 %}
+          http://home.lukin.cn/sounds/cuckoo-clock-01.mp3
+          {% else %}
+          http://home.lukin.cn/sounds/cuckoo-clock-{{now().strftime("%I")}}.mp3
+          {% endif %}
+        media_content_type: music
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}

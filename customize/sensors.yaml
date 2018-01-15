@@ -1,0 +1,65 @@
+sensor.cpu_temperature:
+  friendly_name: CPU 温度
+
+sensor.gpu_temperature:
+  friendly_name: GPU 温度
+
+sensor.home_humidity:
+  friendly_name: 室内湿度
+  icon: mdi:water-percent
+  homebridge_hidden: false
+
+sensor.home_temperature:
+  friendly_name: 室内温度
+  homebridge_hidden: false
+
+sensor.canon_lbp6030w_6018w:
+  friendly_name: 打印机队列
+
+sensor.fastcom_download:
+  icon: mdi:speedometer
+
+sensor.moji_weather_air_quality:
+  friendly_name: 空气质量
+
+sensor.moji_weather_humidity:
+  friendly_name: 室外湿度
+  icon: mdi:water-percent
+
+sensor.moji_weather_temperature:
+  friendly_name: 室外温度
+
+sensor.moji_weather_temperature_max:
+  friendly_name: 最高温度
+
+sensor.moji_weather_temperature_min:
+  friendly_name: 最低温度
+
+sensor.moji_weather_wind_grade:
+  friendly_name: 风级
+  unit_of_measurement: 级
+
+sensor.moji_weather_tips:
+  hidden: true
+  friendly_name: 天气提醒
+
+sensor.moji_weather_condition:
+  friendly_name: 今天天气
+
+sensor.moji_weather_current:
+  friendly_name: 当前天气
+
+sensor.ubuntu_pre_volume:
+  hidden: true
+
+sensor.lukiniphone_battery_level:
+  hidden: true
+
+sensor.lukiniphone_battery_state:
+  hidden: true
+
+sensor.date:
+  hidden: true
+
+sensor.time:
+  hidden: true

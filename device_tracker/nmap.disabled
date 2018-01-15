@@ -1,0 +1,7 @@
+- platform: nmap_tracker
+  hosts: 192.168.199.1/24
+  track_new_devices: no
+  home_interval: 10
+  exclude:
+    - 192.168.199.1
+    - 192.168.199.20

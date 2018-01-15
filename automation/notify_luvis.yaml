@@ -1,0 +1,92 @@
+- alias: 'Notify Luvis for wake up'
+  trigger:
+    - platform: time
+      at: '06:30:00'
+
+  condition:
+    # 周一到周五
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.8
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: >
+          {%- for num in range(0,2) -%}
+            {{ [
+              "卢想，起床啦！",
+              "卢想，起床啦！起床啦！起床啦！",
+              "卢想，太阳晒屁股了，赶紧起床啦！",
+              "卢想，再不起床就要迟到了！"
+            ] | random }}
+
+            {%- if not loop.last -%}
+            ，
+            {%- endif -%}
+          {% endfor -%}
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+- alias: 'Notify Luvis for to school'
+  trigger:
+    - platform: time
+      at: '07:31:00'
+
+  condition:
+    # 周一到周五
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.8
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: >-
+          {{ [
+            "卢想，收拾好书包，要去上学校了！",
+            "卢现升，别看手机啦！快去送卢想上学啦！",
+            "刘银，大便的时候不要玩游戏，快去送卢想上学啦！",
+            "太阳当空照，花儿对我笑，小鸟说，早早早，我要背上炸药包，我去炸学校，从来不迟到！",
+            "太阳当空照，花儿对我笑，小鸟说，早早早，我要背上小书包，我去上学校，从来不迟到！",
+          ] | random -}}
+          今天空气质量：
+          {%- if states('sensor.moji_weather_air_quality') | float <= 50 -%}
+          优，出门不用戴口罩。
+          {%- elif states('sensor.moji_weather_air_quality') | float <= 100 -%}
+          良，出门不用戴口罩。
+          {%- elif states('sensor.moji_weather_air_quality') | float <= 150 -%}
+          轻度污染，要想活的久，带上口罩吧！
+          {%- elif states('sensor.moji_weather_air_quality') | float <= 200 -%}
+          中度污染，要想活的久，带上口罩吧！
+          {%- elif states('sensor.moji_weather_air_quality') | float <= 300 -%}
+          重度污染，警告！警告！警告！不带口罩真的会出人命的！
+          {%- else -%}
+          严重污染，警告！警告！警告！必须带上口罩！必须带上口罩！必须带上口罩！
+          {% endif -%}
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}

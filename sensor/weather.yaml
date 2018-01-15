@@ -1,0 +1,13 @@
+- platform: moji_weather
+  name: Moji Weather
+  monitored_conditions:
+    - weather
+    - weather_current
+    - weather_tips
+    - temperature
+    - temp_min
+    - temp_max
+    - wind_grade
+    - air_quality
+    - humidity
+  scan_interval: 1800
