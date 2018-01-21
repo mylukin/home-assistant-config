@@ -1,14 +1,27 @@
-device_tracker.lukiniphone:
-  hidden: false
+device_tracker.lukiniphonelan:
+  friendly_name: 卢现升
   icon: mdi:cellphone-iphone
 
+device_tracker.lukiniphone:
+  friendly_name: 卢现升
+  icon: mdi:cellphone-iphone
+
+device_tracker.lukindejianguoprolan:
+  friendly_name: 卢现升
+  hidden: false
+  icon: mdi:cellphone-android
+
 device_tracker.lukin_pro:
-  friendly_name: 坚果Pro
+  friendly_name: 卢现升
   hidden: false
   icon: mdi:cellphone-android
 
 device_tracker.liuyindeiphone6lan:
-  friendly_name: 老婆的iPhone6
+  friendly_name: 刘银
+  icon: mdi:cellphone-iphone
+
+device_tracker._iphone6:
+  friendly_name: 刘银
   hidden: false
   icon: mdi:cellphone-iphone
 

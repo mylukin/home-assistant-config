@@ -123,20 +123,28 @@ logger:
 recorder:
   purge_interval: 1
   purge_keep_days: 365
+  include:
+    domains:
+      - automation
   exclude:
     domains:
       - updater
-      - automation
       - device_tracker
     entities:
       - sun.sun
-      - sensor.moji_weather
-      - sensor.ubuntu_pre_volume
       - sensor.date
       - sensor.time
 
 # 记录事件，按照时间顺序显示房屋发生的所有变化
 logbook:
+  exclude:
+    domains:
+      - media_player
+    entities:
+      - sun.sun
+      - sensor.date
+      - sensor.time
+
 
 # 支持随着时间的推移跟踪状态变化
 history:
@@ -152,8 +160,6 @@ history:
   exclude:
     entities:
       - sun.sun
-      - sensor.moji_weather
-      - sensor.ubuntu_pre_volume
       - sensor.date
       - sensor.time
 

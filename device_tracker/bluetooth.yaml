@@ -1,2 +1,2 @@
 - platform: bluetooth_tracker
-  track_new_devices: no
+  track_new_devices: yes
