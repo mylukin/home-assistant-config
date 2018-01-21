@@ -32,7 +32,7 @@
   action:
     - service: script.set_vlc_volume
       data:
-        value: 1
+        value: 0.9
 
     - service: media_player.play_media
       data_template:
