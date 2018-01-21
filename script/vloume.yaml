@@ -1,6 +1,8 @@
 set_vlc_volume:
   alias: 'Set VLC Volume'
   sequence:
+    - service: shell_command.save_player_current_volume
+    - service: shell_command.set_player_volume_to_lower
     - service: shell_command.set_volume_to_max
     - service: media_player.volume_set
       entity_id: media_player.speaker_vlc

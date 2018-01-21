@@ -22,5 +22,5 @@ automation.auto_open_printer:
 automation.auto_close_printer:
   friendly_name: 空闲自动关闭打印机
 
-automation.lukin_comeback:
-  friendly_name: Lukin回家了
+automation.welcome_home:
+  friendly_name: 欢迎回家

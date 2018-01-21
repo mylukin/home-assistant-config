@@ -8,7 +8,6 @@ device_tracker.lukiniphone:
 
 device_tracker.lukindejianguoprolan:
   friendly_name: 卢现升
-  hidden: false
   icon: mdi:cellphone-android
 
 device_tracker.lukin_pro:

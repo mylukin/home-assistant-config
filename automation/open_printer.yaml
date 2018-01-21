@@ -35,6 +35,9 @@
     - wait_template: >-
         {{ not is_state('media_player.speaker_vlc', 'playing') }}
 
+    # 恢复播放器的音量
+    - service: shell_command.set_player_volume_to_pre
+
 # 打印机闲置20分钟，自动关闭电源
 - alias: 'Auto Close Printer'
   trigger:
@@ -76,4 +79,7 @@
     - delay: 00:00:05
     - wait_template: >-
         {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    # 恢复播放器的音量
+    - service: shell_command.set_player_volume_to_pre
 
