@@ -1,3 +1,0 @@
-# 重启 homebridge
-restart_homebridge: >-
-  systemctl restart homebridge.service

@@ -21,7 +21,7 @@
             "看，太阳出来了，勇气又发芽了",
           ] | random -}}
 
-          {%- if not is_state('sensor.moji_weather_current', '晴') and not is_state('sensor.moji_weather_current', '多云') -%}
+          {%- if not is_state('sensor.moji_weather_current', '晴') -%}
             ，可惜当前天气是{{ states('sensor.moji_weather_current') }}，并看不到太阳。
           {%- endif -%}
 

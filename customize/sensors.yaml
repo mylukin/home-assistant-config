@@ -49,9 +49,6 @@ sensor.moji_weather_condition:
 sensor.moji_weather_current:
   friendly_name: 当前天气
 
-sensor.ubuntu_pre_volume:
-  hidden: true
-
 sensor.lukiniphone_battery_level:
   hidden: true
 

@@ -1,2 +1,3 @@
 - platform: bluetooth_tracker
-  track_new_devices: yes
+  track_new_devices: no
+  home_interval: 10

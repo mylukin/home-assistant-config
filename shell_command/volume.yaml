@@ -4,12 +4,12 @@ set_volume_to_max: >-
 
 # 保存当前音量
 save_player_current_volume: >-
-  ssh lukin.bu "amixer | grep 'Playback' | awk 'NR==3{print \$5}'| sed 's/[^0-9]//g' > /var/run/data/pre_volume.data"
+  ssh lukin@192.168.199.8 "amixer | grep 'Playback' | awk 'NR==3{print \$5}'| sed 's/[^0-9]//g' > /var/run/data/pre_volume.data"
 
 # 调整音乐播放器的声音
 set_player_volume_to_lower: >-
-  ssh lukin.bu "amixer -c 0 sset 'Master',0 20%,20% unmute && amixer -c 0 sset 'PCM',0 20% unmute;"
+  ssh lukin@192.168.199.8 "amixer -c 0 sset 'Master',0 20%,20% unmute && amixer -c 0 sset 'PCM',0 20% unmute;"
 
 # 调整回原来的音量
 set_player_volume_to_pre: >-
-  ssh lukin.bu "volume=\$(cat /var/run/data/pre_volume.data) && amixer -c 0 sset 'Master',0 \${volume}%,\${volume}% unmute && amixer -c 0 sset 'PCM',0 \${volume}% unmute"
+  ssh lukin@192.168.199.8 "volume=\$(cat /var/run/data/pre_volume.data) && amixer -c 0 sset 'Master',0 \${volume}%,\${volume}% unmute && amixer -c 0 sset 'PCM',0 \${volume}% unmute"

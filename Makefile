@@ -6,6 +6,7 @@ install:
 	python3 -m venv .virtualenv
 	./ve pip install --upgrade pip
 	./ve pip install --upgrade wheel
+	./ve pip install --upgrade mysqlclient
 	./shell_scripts/hass_upgrade.sh
 	
 check_config:

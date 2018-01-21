@@ -35,6 +35,31 @@ frontend:
 # 启用配置界面
 config:
 
+# echo dot
+hass_pi:
+
+# cloud
+cloud:
+  alexa:
+    filter:
+      include_entities:
+        - group.all_lights
+        - group.all_switches
+      include_domains:
+        - light
+        - switch
+        - media_player
+        - automation
+
+    entity_config:
+      switch.printer_switch_for_xiaomi:
+        name: Xiaomi Plug
+        display_categories: SMARTPLUG
+
+      switch.printer_switch_for_xiaomi_usb:
+        name: Xiaomi USB Plug
+        display_categories: SMARTPLUG
+
 # 检查可用的更新
 updater:
   include_used_components: true
@@ -123,11 +148,10 @@ logger:
 recorder:
   purge_interval: 1
   purge_keep_days: 365
-  include:
-    domains:
-      - automation
+  db_url: !secret recorder_db_url
   exclude:
     domains:
+      - automation
       - updater
       - device_tracker
     entities:
@@ -140,6 +164,7 @@ logbook:
   exclude:
     domains:
       - media_player
+      - automation
     entities:
       - sun.sun
       - sensor.date
@@ -171,6 +196,7 @@ scene: !include_dir_merge_list scene
 switch: !include_dir_merge_list switch
 script: !include_dir_merge_named script
 shell_command: !include_dir_merge_named shell_command
+hass_intent: !include_dir_merge_named intent_scripts
 
 panel_iframe:
   router:
