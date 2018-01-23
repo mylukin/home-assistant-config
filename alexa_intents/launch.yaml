@@ -1,0 +1,73 @@
+# 实体 Echo dot
+amzn1.ask.skill.e94acf28-cba3-4126-ac1f-32f0229b9dcd:
+  speech:
+    text: >-
+      {{ [
+        "OK",
+        "Done",
+        "No worries",
+        "No Problem",
+        "Enjoy your music"
+      ] | random }}
+
+  directives:
+    type: play
+    audio_type: api
+    audio_url: https://music.lukin.cn/recommend.json
+
+PersonalFMIntent:
+  speech:
+    text: >-
+      {{ [
+        "OK",
+        "Done",
+        "No worries",
+        "No Problem",
+        "Enjoy your music"
+      ] | random }}
+
+  directives:
+    type: play
+    audio_type: api
+    audio_url: https://music.lukin.cn/personal_fm.json
+
+ILikeMusicIntent:
+  speech:
+    text: >-
+      {{ [
+        "OK",
+        "Done",
+        "No worries",
+        "No Problem",
+        "Enjoy your music"
+      ] | random }}
+
+  directives:
+    type: play
+    audio_type: api
+    audio_url: https://music.lukin.cn/ilike.json
+
+AMAZON.NextIntent:
+  speech:
+    text: Next music
+
+AMAZON.PauseIntent:
+  speech:
+    text: Pause music
+
+AMAZON.ResumeIntent:
+  speech:
+    text: Resume music
+
+AMAZON.StopIntent:
+  speech:
+    text: >-
+      {{ [
+        "OK",
+        "Done",
+        "No worries",
+        "No Problem"
+      ] | random }}
+
+  directives:
+    type: stop

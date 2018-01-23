@@ -11,6 +11,7 @@
 *.sqlite
 .uuid
 .HA_VERSION
+.alexa_play
 .cloud/
 .idea/
 .virtualenv/

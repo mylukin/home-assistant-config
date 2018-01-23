@@ -36,7 +36,7 @@ frontend:
 config:
 
 # echo dot
-hass_pi:
+alexa_intent: !include_dir_merge_named alexa_intents
 
 # cloud
 cloud:
@@ -140,9 +140,9 @@ logger:
     homeassistant.helpers.script: warn
     homeassistant.helpers.entity: warn
     homeassistant.exceptions: info
-    py.warnings: error
-    requests.packages.urllib3.connectionpool: critical
-    root: warn
+    #py.warnings: error
+    #requests.packages.urllib3.connectionpool: critical
+    #root: warn
 
 # 记录到数据库中，有 history 和 logbook 去处理
 recorder:
@@ -196,7 +196,6 @@ scene: !include_dir_merge_list scene
 switch: !include_dir_merge_list switch
 script: !include_dir_merge_named script
 shell_command: !include_dir_merge_named shell_command
-hass_intent: !include_dir_merge_named intent_scripts
 
 panel_iframe:
   router:
