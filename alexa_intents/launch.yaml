@@ -13,9 +13,10 @@ amzn1.ask.skill.e94acf28-cba3-4126-ac1f-32f0229b9dcd:
   directives:
     type: play
     audio_type: api
-    audio_url: https://music.lukin.cn/recommend.json
+    audio_url: !secret alexa_intent_recommend
 
-PersonalFMIntent:
+# 播放私人FM
+PlayPersonalFMIntent:
   speech:
     text: >-
       {{ [
@@ -29,9 +30,10 @@ PersonalFMIntent:
   directives:
     type: play
     audio_type: api
-    audio_url: https://music.lukin.cn/personal_fm.json
+    audio_url: !secret alexa_intent_personal_fm
 
-ILikeMusicIntent:
+# 播放我喜欢的歌单
+PlayILikeMusicIntent:
   speech:
     text: >-
       {{ [
@@ -45,12 +47,14 @@ ILikeMusicIntent:
   directives:
     type: play
     audio_type: api
-    audio_url: https://music.lukin.cn/ilike.json
+    audio_url: !secret alexa_intent_ilike
 
+# 下一首歌曲
 AMAZON.NextIntent:
   directives:
     type: next
 
+# 停止播放
 AMAZON.PauseIntent:
   speech:
     text: >-
@@ -64,6 +68,7 @@ AMAZON.PauseIntent:
   directives:
     type: stop
 
+# 停止播放
 AMAZON.StopIntent:
   speech:
     text: >-
@@ -76,3 +81,14 @@ AMAZON.StopIntent:
 
   directives:
     type: stop
+
+# 标记为我喜欢这首歌
+DoILikeThisMusicIntent:
+  speech:
+    text: >-
+      {{ [
+        "OK",
+        "Done",
+        "No worries",
+        "No Problem"
+      ] | random }}

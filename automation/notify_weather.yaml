@@ -1,7 +1,7 @@
 - alias: 'Notify Weather'
   trigger:
     - platform: time
-      at: '06:50:00'
+      at: '07:50:00'
 
   condition:
     # 周一到周五
