@@ -51,6 +51,7 @@ class DirectiveType(enum.Enum):
     """The Alexa speech types."""
 
     play = 'AudioPlayer.Play'
+    next = 'AudioPlayer.Next'
     stop = 'AudioPlayer.Stop'
     ClearQueue = 'AudioPlayer.ClearQueue'
     PlaybackStarted = 'AudioPlayer.PlaybackStarted'
@@ -62,6 +63,7 @@ class DirectiveType(enum.Enum):
 
 DIRECTIVE_MAPPINGS = {
     'play': DirectiveType.play,
+    'next': DirectiveType.next,
     'stop': DirectiveType.stop,
     'clear_queue': DirectiveType.ClearQueue,
     'playback_started': DirectiveType.PlaybackStarted,
@@ -225,10 +227,9 @@ def async_handle_intent(hass, message):
         _LOGGER.info("intent_directive: %s, intent_response.directives: %s", intent_directive,
                      intent_response.directives)
         if intent_directive in intent_response.directives:
-            _LOGGER.info("Found %s, %s", intent_directive, alexa_directive)
-            _LOGGER.info("if %s == %s", alexa_directive.value, DirectiveType.play.value)
+            _LOGGER.info("Found %s, %s", intent_directive, alexa_directive.value)
 
-            # 音频动作
+            # 开始播放
             if alexa_directive.value == DirectiveType.play.value:
                 # 音频类型
                 audio_type = intent_response.directives[intent_directive]['audio_type']
@@ -237,6 +238,7 @@ def async_handle_intent(hass, message):
                 _LOGGER.info("audio_type: %s, audio_url: %s", audio_type, audio_url)
                 playlist_save(hass, 'play', intent_response.directives[intent_directive])
                 alexa_response.add_audio_play(audio_type, audio_url, 'REPLACE_ALL')
+            # 自动下一首
             elif alexa_directive.value == DirectiveType.PlaybackNearlyFinished.value:
                 # 获取保存的播放列表
                 directives = get_playlist(hass, 'play')
@@ -247,8 +249,22 @@ def async_handle_intent(hass, message):
                 audio_type = directives['audio_type']
                 # 音频URL
                 audio_url = directives['audio_url']
-                _LOGGER.info("token: %s, audio_type: %s, audio_url: %s", token, audio_type, audio_url)
+                _LOGGER.info("PlaybackNearlyFinished, token: %s, audio_type: %s, audio_url: %s", token, audio_type, audio_url)
                 alexa_response.add_audio_play(audio_type, audio_url, 'ENQUEUE', token)
+
+            # 手动下一首
+            elif alexa_directive.value == DirectiveType.next.value:
+                # 获取保存的播放列表
+                directives = get_playlist(hass, 'play')
+                _LOGGER.info("directives: %s", directives)
+                # 获取上一次的token
+                token = req.get('token')
+                # 音频类型
+                audio_type = directives['audio_type']
+                # 音频URL
+                audio_url = directives['audio_url']
+                _LOGGER.info("Next, token: %s, audio_type: %s, audio_url: %s", token, audio_type, audio_url)
+                alexa_response.add_audio_play(audio_type, audio_url, 'REPLACE_ALL', token)
             elif alexa_directive.value == DirectiveType.stop.value:
                 alexa_response.add_audio_stop()
 
@@ -371,7 +387,7 @@ class AlexaResponse(object):
             key: text.async_render(self.variables)
         }
 
-    def add_audio_play(self, type, url, behavior='REPLACE_ALL', expectedPreviousToken='', offsetInMilliseconds=0):
+    def add_audio_play(self, type, url, behavior='REPLACE_ALL', expectedPreviousToken=None, offsetInMilliseconds=0):
         """
         播放音频
 
@@ -390,14 +406,14 @@ class AlexaResponse(object):
             resp = requests.get(url)
             _LOGGER.info("status_code: {}".format(resp.status_code))
             if resp.status_code == 200:
+                import json
                 songs = resp.json()
                 count = len(songs)
                 _LOGGER.info("songs count: {}".format(count))
 
-                songid = random.randint(0, count)
+                songid = random.randint(0, count - 1)
                 song = songs[songid]
-                _LOGGER.info("song: ", song)
-                token = song['md5']
+                _LOGGER.info("song: %s", json.dumps(song, ensure_ascii=False))
                 url = song['url']
 
         self.audio_play(behavior, token, url, expectedPreviousToken, offsetInMilliseconds)
@@ -436,7 +452,7 @@ class AlexaResponse(object):
             'response': response,
         }
 
-    def audio_play(self, behavior, token, url, expectedPreviousToken='', offsetInMilliseconds=0):
+    def audio_play(self, behavior, token, url, expectedPreviousToken=None, offsetInMilliseconds=0):
         """
         AudioPlayer.Play
 
@@ -447,19 +463,27 @@ class AlexaResponse(object):
         :param offsetInMilliseconds:
         :return:
         """
+        if expectedPreviousToken:
+            stream = {
+                'token': token,
+                'url': url,
+                'offsetInMilliseconds': offsetInMilliseconds,
+                'expectedPreviousToken': expectedPreviousToken,
+            }
+        else:
+            stream = {
+                'token': token,
+                'url': url,
+                'offsetInMilliseconds': offsetInMilliseconds,
+            }
         directive = {
             'type': DirectiveType.play.value,
             'playBehavior': behavior,
             'audioItem': {
-                'stream': {
-                    'token': token,
-                    'url': url,
-                    'offsetInMilliseconds': offsetInMilliseconds,
-                    'expectedPreviousToken': expectedPreviousToken,
-                }
+                'stream': stream
             }
         }
-        _LOGGER.info("directive: ", directive)
+        _LOGGER.info("directive: %s", directive)
         self.directives = [directive]
 
     def audio_stop(self):

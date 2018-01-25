@@ -48,16 +48,21 @@ ILikeMusicIntent:
     audio_url: https://music.lukin.cn/ilike.json
 
 AMAZON.NextIntent:
-  speech:
-    text: Next music
+  directives:
+    type: next
 
 AMAZON.PauseIntent:
   speech:
-    text: Pause music
+    text: >-
+      {{ [
+        "OK",
+        "Done",
+        "No worries",
+        "No Problem"
+      ] | random }}
 
-AMAZON.ResumeIntent:
-  speech:
-    text: Resume music
+  directives:
+    type: stop
 
 AMAZON.StopIntent:
   speech:
