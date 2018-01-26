@@ -81,3 +81,7 @@ sensor.echo_dot_play_song_url:
   hidden: true
   friendly_name: Echo Dot 正在播放的歌曲URL
 
+sensor.echo_dot_play_song_list:
+  hidden: true
+  friendly_name: Echo Dot 正在播放的歌曲列表
+

@@ -84,6 +84,9 @@ AMAZON.StopIntent:
 
 # 标记为我喜欢这首歌
 DoILikeThisMusicIntent:
+  action:
+    service: shell_command.i_like_this_song
+
   speech:
     text: >-
       {{ [
@@ -92,3 +95,10 @@ DoILikeThisMusicIntent:
         "No worries",
         "No Problem"
       ] | random }}
+
+# 天气预报
+WeatherIntent:
+  action:
+    service: automation.trigger
+    data_template:
+      entity_id: automation.notify_weather

@@ -1,0 +1,3 @@
+# 我喜欢这首歌
+i_like_this_song: >-
+  curl "https://music.lukin.cn/ilike_song.json?like=true&id=$(cat .alexa_play | jq .play_song.id)"

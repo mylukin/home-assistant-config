@@ -137,12 +137,13 @@ logger:
     homeassistant.components.http: warn
     homeassistant.components.media_player: warn
     homeassistant.components.recorder: warn
+    homeassistant.components.sensor.command_line: warn
     homeassistant.helpers.script: warn
     homeassistant.helpers.entity: warn
     homeassistant.exceptions: info
-    #py.warnings: error
-    #requests.packages.urllib3.connectionpool: critical
-    #root: warn
+    py.warnings: error
+    requests.packages.urllib3.connectionpool: critical
+    root: warn
 
 # 记录到数据库中，有 history 和 logbook 去处理
 recorder:
