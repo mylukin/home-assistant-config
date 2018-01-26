@@ -60,3 +60,24 @@ sensor.date:
 
 sensor.time:
   hidden: true
+
+sensor.echo_dot_play_song_id:
+  hidden: true
+  friendly_name: Echo Dot 正在播放的歌曲ID
+
+sensor.echo_dot_play_song_title:
+  hidden: true
+  friendly_name: Echo Dot 正在播放的歌曲标题
+
+sensor.echo_dot_play_song_name:
+  hidden: true
+  friendly_name: Echo Dot 正在播放的歌曲名称
+
+sensor.echo_dot_play_song_author:
+  hidden: true
+  friendly_name: Echo Dot 正在播放的歌曲作者
+
+sensor.echo_dot_play_song_url:
+  hidden: true
+  friendly_name: Echo Dot 正在播放的歌曲URL
+
