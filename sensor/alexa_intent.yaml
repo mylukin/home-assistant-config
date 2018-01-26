@@ -1,0 +1,4 @@
+- platform: command_line
+  name: Echo dot play song id
+  command: >-
+    cat .alexa_play  | jq .play_song.id

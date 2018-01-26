@@ -1,13 +1,11 @@
 - platform: command_line
   name: CPU Temperature
-  friendly_name: CPU 温度
   command: >-
     echo "scale=1; $(cat /sys/class/thermal/thermal_zone0/temp)/1000" | bc
   unit_of_measurement: "°C"
 
 - platform: command_line
   name: GPU Temperature
-  friendly_name: GPU 温度
   command: >-
     echo $(/opt/vc/bin/vcgencmd measure_temp) | sed 's/[^0-9\.]//g'
   unit_of_measurement: "°C"
