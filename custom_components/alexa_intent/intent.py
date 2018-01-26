@@ -415,6 +415,8 @@ class AlexaResponse(object):
                 song = songs[songid]
                 _LOGGER.info("song: %s", json.dumps(song, ensure_ascii=False))
                 url = song['url']
+                # 保存当前正在播放的歌曲
+                playlist_save(self.hass, 'play_song', song)
 
         self.audio_play(behavior, token, url, expectedPreviousToken, offsetInMilliseconds)
 
