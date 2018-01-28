@@ -25,8 +25,6 @@ homeassistant:
     "device_tracker.*":
       hidden: true
 
-    group.temperature:
-      state_card_mode: badges
 
 # 启用前端
 frontend:
@@ -189,6 +187,46 @@ history:
       - sensor.date
       - sensor.time
 
+# 曲线图
+history_graph:
+  # 丢包率统计
+  packet_loss:
+    name: Packet loss
+    entities:
+      - sensor.ping_google_cloud
+      - sensor.ping_dgc
+      - sensor.ping_mofang_cloud
+      - sensor.ping_router
+    hours_to_show: 24
+    refresh: 60
+
+  # 温度统计
+  temperature:
+    name: Temperature
+    entities:
+      - sensor.moji_weather_temperature
+      - sensor.home_temperature
+      - sensor.moji_weather_temperature_max
+      - sensor.moji_weather_temperature_min
+    hours_to_show: 24
+
+  # 湿度统计
+  humidity:
+    name: Humidity
+    entities:
+      - sensor.moji_weather_humidity
+      - sensor.home_humidity
+    hours_to_show: 24
+
+  # 下载速度
+  speedtest:
+    name: Speed test
+    entities:
+      - sensor.fastcom_download
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+    hours_to_show: 24
+
 group: !include_dir_merge_named group
 device_tracker: !include_dir_merge_list device_tracker
 sensor: !include_dir_merge_list sensor
@@ -208,8 +246,3 @@ panel_iframe:
     title: 'Aria2'
     icon: mdi:cloud-download
     url: 'https://down.lukin.cn/'
-
-  printer:
-    title: 'Printer'
-    icon: mdi:printer
-    url: 'https://printer.lukin.cn/'

@@ -1,0 +1,20 @@
+group.weather:
+  order: 1
+
+group.echo_dot:
+  order: 2
+
+group.system_monitor:
+  order: 3
+
+group.speedtest:
+  order: 4
+
+group.printer:
+  order: 5
+
+group.all_automations:
+  order: 6
+
+group.history_graph:
+  order: 7

@@ -1,0 +1,43 @@
+- platform: command_line
+  name: CPU Temperature
+  command: >-
+    echo "scale=1; $(cat /sys/class/thermal/thermal_zone0/temp)/1000" | bc
+  unit_of_measurement: "°C"
+
+- platform: command_line
+  name: GPU Temperature
+  command: >-
+    echo $(/opt/vc/bin/vcgencmd measure_temp) | sed 's/[^0-9\.]//g'
+  unit_of_measurement: "°C"
+
+- platform: command_line
+  name: Ping Google Cloud
+  command: >-
+    ping -c 10 35.201.149.46 | grep 'packet loss' | sed "s/.*received, //g" | sed "s/%.*$//g"
+  scan_interval: 60
+  timeout: 00:01:00
+  unit_of_measurement: "%"
+
+- platform: command_line
+  name: Ping DGC
+  command: >-
+    ping -c 10 202.144.192.204 | grep 'packet loss' | sed "s/.*received, //g" | sed "s/%.*$//g"
+  scan_interval: 60
+  timeout: 00:01:00
+  unit_of_measurement: "%"
+
+- platform: command_line
+  name: Ping Mofang Cloud
+  command: >-
+    ping -c 10 103.95.207.114 | grep 'packet loss' | sed "s/.*received, //g" | sed "s/%.*$//g"
+  scan_interval: 60
+  timeout: 00:01:00
+  unit_of_measurement: "%"
+
+- platform: command_line
+  name: Ping Router
+  command: >-
+    ping -c 10 192.168.199.1 | grep 'packet loss' | sed "s/.*received, //g" | sed "s/%.*$//g"
+  scan_interval: 60
+  timeout: 00:01:00
+  unit_of_measurement: "%"

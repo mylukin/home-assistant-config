@@ -33,3 +33,28 @@
   command: >-
     cat .alexa_play  | jq -r .play.audio_url | sed 's/^.*cn\///' | sed 's/.json//'
   scan_interval: 1
+
+- platform: command_line
+  name: Echo dot play song state
+  command: >-
+    cat .alexa_play  | jq -r .play_state
+  scan_interval: 1
+
+- platform: template
+  sensors:
+    playlist:
+      friendly_name: 播放的列表
+      value_template: >-
+        {%- if is_state('sensor.echo_dot_play_song_state', 'play') -%}
+        正在播放 - {% if is_state('sensor.echo_dot_play_song_list', 'ilike') -%}
+          我喜欢的音乐
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'recommend') -%}
+          每日推荐
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'personal_fm') -%}
+          私人FM
+          {%- endif -%}
+        {%- elif is_state('sensor.echo_dot_play_song_list', 'stop') -%}
+        已停止播放
+        {%- endif -%}
+      icon_template: mdi:playlist-play
+

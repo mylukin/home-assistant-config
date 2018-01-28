@@ -4,10 +4,8 @@ amzn1.ask.skill.e94acf28-cba3-4126-ac1f-32f0229b9dcd:
     text: >-
       {{ [
         "OK",
-        "Done",
-        "No worries",
         "No Problem",
-        "Enjoy your music"
+        "Enjoy your music!"
       ] | random }}
 
   directives:
@@ -21,10 +19,8 @@ PlayPersonalFMIntent:
     text: >-
       {{ [
         "OK",
-        "Done",
-        "No worries",
         "No Problem",
-        "Enjoy your music"
+        "Enjoy your music!"
       ] | random }}
 
   directives:
@@ -38,10 +34,8 @@ PlayILikeMusicIntent:
     text: >-
       {{ [
         "OK",
-        "Done",
-        "No worries",
         "No Problem",
-        "Enjoy your music"
+        "Enjoy your music!"
       ] | random }}
 
   directives:
@@ -61,7 +55,6 @@ AMAZON.PauseIntent:
       {{ [
         "OK",
         "Done",
-        "No worries",
         "No Problem"
       ] | random }}
 
@@ -75,7 +68,6 @@ AMAZON.StopIntent:
       {{ [
         "OK",
         "Done",
-        "No worries",
         "No Problem"
       ] | random }}
 
@@ -92,11 +84,16 @@ DoILikeThisMusicIntent:
       {{ [
         "OK",
         "Done",
-        "No worries",
         "No Problem"
       ] | random }}
 
 # 天气预报
+amzn1.ask.skill.d90d6619-9232-40ce-b722-468f3bdf4ecc:
+  action:
+    service: automation.trigger
+    data_template:
+      entity_id: automation.notify_weather
+
 WeatherIntent:
   action:
     service: automation.trigger

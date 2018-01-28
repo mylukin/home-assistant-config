@@ -4,6 +4,7 @@ device_tracker.lukiniphonelan:
 
 device_tracker.lukiniphone:
   friendly_name: 卢现升
+  hidden: false
   icon: mdi:cellphone-iphone
 
 device_tracker.lukindejianguoprolan:
@@ -12,7 +13,6 @@ device_tracker.lukindejianguoprolan:
 
 device_tracker.lukin_pro:
   friendly_name: 卢现升
-  hidden: false
   icon: mdi:cellphone-android
 
 device_tracker.liuyindeiphone6lan:

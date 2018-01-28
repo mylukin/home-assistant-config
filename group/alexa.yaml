@@ -1,0 +1,5 @@
+echo_dot:
+  name: Echo Dot
+  entities:
+    - sensor.echo_dot_play_song_name
+    - sensor.playlist

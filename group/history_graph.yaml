@@ -1,0 +1,7 @@
+history_graph:
+  name: 曲线图
+  entities:
+    - history_graph.temperature
+    - history_graph.humidity
+    - history_graph.packet_loss
+    - history_graph.speed_test

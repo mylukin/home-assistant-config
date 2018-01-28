@@ -8,6 +8,7 @@ https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.
 """
 import asyncio
 import enum
+import json
 import logging
 
 import voluptuous as vol
@@ -249,9 +250,9 @@ def async_handle_intent(hass, message):
                 audio_type = directives['audio_type']
                 # 音频URL
                 audio_url = directives['audio_url']
-                _LOGGER.info("PlaybackNearlyFinished, token: %s, audio_type: %s, audio_url: %s", token, audio_type, audio_url)
+                _LOGGER.info("PlaybackNearlyFinished, token: %s, audio_type: %s, audio_url: %s", token, audio_type,
+                             audio_url)
                 alexa_response.add_audio_play(audio_type, audio_url, 'ENQUEUE', token)
-
             # 手动下一首
             elif alexa_directive.value == DirectiveType.next.value:
                 # 获取保存的播放列表
@@ -265,8 +266,16 @@ def async_handle_intent(hass, message):
                 audio_url = directives['audio_url']
                 _LOGGER.info("Next, token: %s, audio_type: %s, audio_url: %s", token, audio_type, audio_url)
                 alexa_response.add_audio_play(audio_type, audio_url, 'REPLACE_ALL', token)
+            # 播放开始
+            elif alexa_directive.value == DirectiveType.PlaybackStarted.value:
+                playlist_save(hass, 'play_state', 'play')
+            # 播放
+            elif alexa_directive.value == DirectiveType.PlaybackFinished.value:
+                pass
             elif alexa_directive.value == DirectiveType.stop.value:
                 alexa_response.add_audio_stop()
+                playlist_save(hass, 'play_song', {})
+                playlist_save(hass, 'play_state', 'stop')
 
             break
 
@@ -406,7 +415,6 @@ class AlexaResponse(object):
             resp = requests.get(url)
             _LOGGER.info("status_code: {}".format(resp.status_code))
             if resp.status_code == 200:
-                import json
                 songs = resp.json()
                 count = len(songs)
                 _LOGGER.info("songs count: {}".format(count))
@@ -531,13 +539,16 @@ def playlist_save(hass, key, playlist):
     """保存播放列表"""
     playlists = hass.data.get(PLAYLIST_DATA_KEY)
     if playlists is None:
-        playlists = hass.data[PLAYLIST_DATA_KEY] = {}
+        try:
+            with open(hass.config.path(PLAYLIST_DATA_FILE)) as fptr:
+                playlists = json.loads(fptr.read())
+        except FileNotFoundError:
+            playlists = hass.data[PLAYLIST_DATA_KEY] = {}
 
     _LOGGER.info("Playlist save. key:%s, playlist: %s", key, playlist)
     playlists[key] = playlist
 
     with open(hass.config.path(PLAYLIST_DATA_FILE), 'w') as fptr:
-        import json
         fptr.write(json.dumps(playlists))
 
 
@@ -552,7 +563,6 @@ def get_playlist(hass, key):
     # 内存没有，读文件
     try:
         with open(hass.config.path(PLAYLIST_DATA_FILE)) as fptr:
-            import json
             jsonf = json.loads(fptr.read())
             return jsonf[key]
     except (ValueError, AttributeError):
