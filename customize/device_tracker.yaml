@@ -1,25 +1,14 @@
-device_tracker.lukiniphonelan:
-  friendly_name: 卢现升
-  icon: mdi:cellphone-iphone
-
-device_tracker.lukiniphone:
+device_tracker.1c9148626b4c:
   friendly_name: 卢现升
   hidden: false
   icon: mdi:cellphone-iphone
 
-device_tracker.lukindejianguoprolan:
+device_tracker.smartisanu2pro:
   friendly_name: 卢现升
+  hidden: false
   icon: mdi:cellphone-android
 
-device_tracker.lukin_pro:
-  friendly_name: 卢现升
-  icon: mdi:cellphone-android
-
-device_tracker.liuyindeiphone6lan:
-  friendly_name: 刘银
-  icon: mdi:cellphone-iphone
-
-device_tracker._iphone6:
+device_tracker.f0dbe28421f8:
   friendly_name: 刘银
   hidden: false
   icon: mdi:cellphone-iphone
@@ -29,17 +18,3 @@ device_tracker.canonc8b1e0lan:
   icon: mdi:printer
   source_type: printer
   hidden: false
-
-device_tracker.38a28cbc1d6c:
-  friendly_name: 电视投屏
-
-device_tracker.amazon39ce0ce91lan:
-  friendly_name: amazon echo dot
-
-device_tracker.luxiangdeiphonelan:
-  friendly_name: 卢想的iPhone4s
-  icon: mdi:cellphone-iphone
-
-device_tracker.luxiangdeipadlan:
-  friendly_name: 卢想的iPad
-  icon: mdi:tablet-ipad

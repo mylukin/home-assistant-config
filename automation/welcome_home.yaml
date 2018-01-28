@@ -2,12 +2,9 @@
   trigger:
     platform: state
     entity_id:
-      - device_tracker.lukiniphone
-      - device_tracker.lukiniphonelan
-      - device_tracker.lukin_pro
-      - device_tracker.lukindejianguoprolan
-      - device_tracker._iphone6
-      - device_tracker.liuyindeiphone6lan
+      - device_tracker.1c9148626b4c
+      - device_tracker.f0dbe28421f8
+      - device_tracker.smartisanu2pro
     from: not_home
     to: home
 
