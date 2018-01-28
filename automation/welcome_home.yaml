@@ -2,8 +2,8 @@
   trigger:
     platform: state
     entity_id:
-      - device_tracker.1c9148626b4c
-      - device_tracker.f0dbe28421f8
+      - device_tracker.lukin
+      - device_tracker.liuyin
       - device_tracker.smartisanu2pro
     from: not_home
     to: home

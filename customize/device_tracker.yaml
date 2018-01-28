@@ -1,4 +1,4 @@
-device_tracker.1c9148626b4c:
+device_tracker.lukin:
   friendly_name: 卢现升
   hidden: false
   icon: mdi:cellphone-iphone
@@ -8,12 +8,12 @@ device_tracker.smartisanu2pro:
   hidden: false
   icon: mdi:cellphone-android
 
-device_tracker.f0dbe28421f8:
+device_tracker.liuyin:
   friendly_name: 刘银
   hidden: false
   icon: mdi:cellphone-iphone
 
-device_tracker.canonc8b1e0lan:
+device_tracker.printer:
   friendly_name: 打印机
   icon: mdi:printer
   source_type: printer
