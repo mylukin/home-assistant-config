@@ -11,5 +11,6 @@ weather:
     - sensor.moji_weather_humidity
     - sensor.dht_sensor_humidity
     - sensor.moji_weather_air_quality
+    - sensor.waqi_shanghai_normal_college_primary_division_shanghai
     - sensor.moji_weather_wind_grade
     - sensor.moji_weather_tips

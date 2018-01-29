@@ -75,15 +75,15 @@
             "太阳当空照，花儿对我笑，小鸟说，早早早，我要背上小书包，我去上学校，从来不迟到！",
           ] | random -}}
           今天空气质量：
-          {%- if states('sensor.moji_weather_air_quality') | float <= 50 -%}
+          {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 50 -%}
           优，出门不用戴口罩。
-          {%- elif states('sensor.moji_weather_air_quality') | float <= 100 -%}
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 100 -%}
           良，出门不用戴口罩。
-          {%- elif states('sensor.moji_weather_air_quality') | float <= 150 -%}
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 150 -%}
           轻度污染，要想活的久，带上口罩吧！
-          {%- elif states('sensor.moji_weather_air_quality') | float <= 200 -%}
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 200 -%}
           中度污染，要想活的久，带上口罩吧！
-          {%- elif states('sensor.moji_weather_air_quality') | float <= 300 -%}
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 300 -%}
           重度污染，警告！警告！警告！不带口罩真的会出人命的！
           {%- else -%}
           严重污染，警告！警告！警告！必须带上口罩！必须带上口罩！必须带上口罩！

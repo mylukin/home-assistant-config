@@ -43,6 +43,11 @@ sensor.fastcom_download:
 
 sensor.moji_weather_air_quality:
   friendly_name: 空气质量
+  icon: mdi:cloud
+  unit_of_measurement: AQI
+
+sensor.waqi_shanghai_normal_college_primary_division_shanghai:
+  friendly_name: 空气质量
 
 sensor.moji_weather_humidity:
   friendly_name: 室外湿度
