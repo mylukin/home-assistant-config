@@ -5,10 +5,11 @@ weather:
     - sensor.moji_weather_condition
     - sensor.moji_weather_temperature
     - sensor.home_temperature
+    - sensor.dht_sensor_temperature
     - sensor.moji_weather_temperature_max
     - sensor.moji_weather_temperature_min
     - sensor.moji_weather_humidity
-    - sensor.home_humidity
+    - sensor.dht_sensor_humidity
     - sensor.moji_weather_air_quality
     - sensor.moji_weather_wind_grade
     - sensor.moji_weather_tips

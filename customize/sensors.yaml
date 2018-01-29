@@ -22,7 +22,16 @@ sensor.home_humidity:
   icon: mdi:water-percent
   homebridge_hidden: false
 
+sensor.dht_sensor_humidity:
+  friendly_name: 室内湿度
+  icon: mdi:water-percent
+  homebridge_hidden: false
+
 sensor.home_temperature:
+  friendly_name: 室内温度
+  homebridge_hidden: false
+
+sensor.dht_sensor_temperature:
   friendly_name: 室内温度
   homebridge_hidden: false
 

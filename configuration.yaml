@@ -205,7 +205,7 @@ history_graph:
     name: Temperature
     entities:
       - sensor.moji_weather_temperature
-      - sensor.home_temperature
+      - sensor.dht_sensor_temperature
       - sensor.moji_weather_temperature_max
       - sensor.moji_weather_temperature_min
     hours_to_show: 24
@@ -215,7 +215,7 @@ history_graph:
     name: Humidity
     entities:
       - sensor.moji_weather_humidity
-      - sensor.home_humidity
+      - sensor.dht_sensor_humidity
     hours_to_show: 24
 
   # 下载速度
