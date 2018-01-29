@@ -19,7 +19,7 @@
   action:
     - service: script.set_vlc_volume
       data:
-        value: 0.7
+        value: 0.6
 
     - service: tts.baidu_say
       data_template:
@@ -64,7 +64,7 @@
   action:
     - service: script.set_vlc_volume
       data:
-        value: 0.7
+        value: 0.6
 
     - service: tts.baidu_say
       data_template:
