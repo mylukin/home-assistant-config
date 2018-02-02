@@ -36,28 +36,6 @@ config:
 # echo dot
 alexa_intent: !include_dir_merge_named alexa_intents
 
-# cloud
-cloud:
-  alexa:
-    filter:
-      include_entities:
-        - group.all_lights
-        - group.all_switches
-      include_domains:
-        - light
-        - switch
-        - media_player
-        - automation
-
-    entity_config:
-      switch.printer_switch_for_xiaomi:
-        name: Xiaomi Plug
-        display_categories: SMARTPLUG
-
-      switch.printer_switch_for_xiaomi_usb:
-        name: Xiaomi USB Plug
-        display_categories: SMARTPLUG
-
 # 检查可用的更新
 updater:
   include_used_components: true
