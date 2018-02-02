@@ -1,0 +1,50 @@
+- alias: 'Purifying air'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
+    above: 150
+    below: 999
+
+  condition:
+    condition: numeric_state
+    entity_id: sensor.living_room_air_quality
+    above: 1
+    below: 4
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.6
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: >
+          {%- for num in range(0,2) -%}
+            空气质量：
+            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 50 -%}
+            优
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 100 -%}
+            良
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 150 -%}
+            轻度污染
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 200 -%}
+            中度污染
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 300 -%}
+            重度污染
+            {%- else -%}
+            严重污染
+            {% endif -%}
+
+            {%- if not loop.last -%}
+            ，
+            {%- endif -%}
+          {% endfor -%}
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    # 恢复播放器的音量
+    - service: shell_command.set_player_volume_to_pre
+
