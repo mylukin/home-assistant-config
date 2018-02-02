@@ -79,7 +79,7 @@ sun:
 ios:
 
 # 戴森设备
-dyson_cn:
+dyson:
   username: !secret dyson_account_user_email
   password: !secret dyson_acount_password
   devices:
