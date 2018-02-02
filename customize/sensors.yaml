@@ -19,12 +19,12 @@ sensor.ping_router:
 
 sensor.dht_sensor_humidity:
   friendly_name: 室内湿度(PI)
+  hidden: true
   icon: mdi:water-percent
-  homebridge_hidden: false
 
 sensor.dht_sensor_temperature:
   friendly_name: 室内温度(PI)
-  homebridge_hidden: false
+  hidden: true
 
 sensor.canon_lbp6030w_6018w:
   friendly_name: 打印机队列
@@ -39,6 +39,7 @@ sensor.moji_weather_air_quality:
 
 sensor.waqi_shanghai_normal_college_primary_division_shanghai:
   friendly_name: 空气质量
+  homebridge_hidden: false
 
 sensor.moji_weather_humidity:
   friendly_name: 室外湿度
@@ -84,8 +85,9 @@ sensor.echo_dot_play_song_id:
   friendly_name: 正在播放的歌曲ID
 
 sensor.echo_dot_play_song_title:
-  hidden: true
   friendly_name: 正在播放的歌曲标题
+  hidden: true
+  homebridge_hidden: false
 
 sensor.echo_dot_play_song_name:
   hidden: false
@@ -119,6 +121,8 @@ sensor.living_room_filter_life:
 sensor.living_room_humidity:
   friendly_name: 客厅湿度
   icon: mdi:water-percent
+  homebridge_hidden: false
 
 sensor.living_room_temperature:
   friendly_name: 客厅温度
+  homebridge_hidden: false
