@@ -64,6 +64,9 @@ dyson:
     - device_id: NK6-CN-HFA1117A
       device_ip: 192.168.199.53
 
+climate:
+  platform: fan
+
 # ifttt
 ifttt:
   key: !secret ifttt_key
