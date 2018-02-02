@@ -96,8 +96,8 @@ def setup(hass, config):
     # Start fan/sensors components
     if hass.data[DYSON_DEVICES]:
         _LOGGER.debug("Starting sensor/fan components")
-        discovery.load_platform(hass, "sensor", DOMAIN, {}, config)
-        discovery.load_platform(hass, "fan", DOMAIN, {}, config)
-        discovery.load_platform(hass, "vacuum", DOMAIN, {}, config)
+        discovery.load_platform(hass, "sensor", 'dyson', {}, config)
+        discovery.load_platform(hass, "fan", 'dyson', {}, config)
+        discovery.load_platform(hass, "vacuum", 'dyson', {}, config)
 
     return True
