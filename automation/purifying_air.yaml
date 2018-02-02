@@ -1,15 +1,27 @@
 - alias: 'Purifying air'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
-    above: 150
-    below: 999
+    - platform: numeric_state
+      entity_id: sensor.moji_weather_air_quality
+      above: 150
+      below: 999
+
+    - platform: numeric_state
+      entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
+      above: 150
+      below: 999
 
   condition:
-    condition: numeric_state
-    entity_id: sensor.living_room_air_quality
-    above: 1
-    below: 4
+    condition: or
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.living_room_air_quality
+        above: 1
+        below: 4
+
+      - condition: numeric_state
+        entity_id: sensor.living_room_dust
+        above: 3
+        below: 10
 
   action:
     - service: script.set_vlc_volume
@@ -20,26 +32,21 @@
       data_template:
         entity_id: media_player.speaker_vlc
         message: >
-          {%- for num in range(0,2) -%}
-            空气质量：
-            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 50 -%}
-            优
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 100 -%}
-            良
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 150 -%}
-            轻度污染
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 200 -%}
-            中度污染
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 300 -%}
-            重度污染
-            {%- else -%}
-            严重污染
-            {% endif -%}
-
-            {%- if not loop.last -%}
-            ，
-            {%- endif -%}
-          {% endfor -%}
+          空气质量：
+          {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 50 -%}
+          优
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 100 -%}
+          良
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 150 -%}
+          轻度污染
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 200 -%}
+          中度污染
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 300 -%}
+          重度污染
+          {%- else -%}
+          严重污染
+          {% endif -%}
+          即将为你打开空气净化器，请关闭门窗。
 
     - delay: 00:00:05
     - wait_template: >-
@@ -47,4 +54,30 @@
 
     # 恢复播放器的音量
     - service: shell_command.set_player_volume_to_pre
+
+    # 打开净化器
+    - service: fan.turn_on
+      data_template:
+        entity_id: fan.living_room
+        speed: >-
+          {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 50 -%}
+          AUTO
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 100 -%}
+          AUTO
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 150 -%}
+          4
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 200 -%}
+          6
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 300 -%}
+          8
+          {%- else -%}
+          10
+          {% endif -%}
+
+    # 摇头
+    - service: fan.turn_on
+      data_template:
+        entity_id: fan.living_room
+        oscillating: true
+
 

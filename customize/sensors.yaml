@@ -39,7 +39,6 @@ sensor.moji_weather_air_quality:
 
 sensor.waqi_shanghai_normal_college_primary_division_shanghai:
   friendly_name: 空气质量
-  homebridge_hidden: false
 
 sensor.moji_weather_humidity:
   friendly_name: 室外湿度
@@ -111,9 +110,11 @@ sensor.echo_dot_play_song_state:
 
 sensor.living_room_air_quality:
   hidden: true
+  homebridge_hidden: false
 
 sensor.living_room_dust:
   hidden: true
+  homebridge_hidden: false
 
 sensor.living_room_filter_life:
   hidden: true
