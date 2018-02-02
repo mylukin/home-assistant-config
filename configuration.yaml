@@ -78,6 +78,11 @@ sun:
 # 激活iOS客户端
 ios:
 
+# 戴森设备
+dyson_cn:
+  username: !secret dyson_account_user_email
+  password: !secret dyson_acount_password
+
 # ifttt
 ifttt:
   key: !secret ifttt_key
