@@ -17,22 +17,13 @@ sensor.ping_mofang_cloud:
 sensor.ping_router:
   friendly_name: 路由器丢包率
 
-sensor.home_humidity:
-  friendly_name: 室内湿度
-  icon: mdi:water-percent
-  homebridge_hidden: false
-
 sensor.dht_sensor_humidity:
-  friendly_name: 室内湿度
+  friendly_name: 室内湿度(PI)
   icon: mdi:water-percent
-  homebridge_hidden: false
-
-sensor.home_temperature:
-  friendly_name: 室内温度
   homebridge_hidden: false
 
 sensor.dht_sensor_temperature:
-  friendly_name: 室内温度
+  friendly_name: 室内温度(PI)
   homebridge_hidden: false
 
 sensor.canon_lbp6030w_6018w:
@@ -115,3 +106,18 @@ sensor.echo_dot_play_song_list:
 sensor.echo_dot_play_song_state:
   hidden: true
   friendly_name: 播放器状态
+
+sensor.living_room_air_quality:
+  hidden: true
+
+sensor.living_room_dust:
+  hidden: true
+
+sensor.living_room_filter_life:
+  hidden: true
+
+sensor.living_room_humidity:
+  friendly_name: 客厅湿度
+
+sensor.living_room_temperature:
+  friendly_name: 客厅温度

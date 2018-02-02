@@ -18,3 +18,6 @@ group.all_automations:
 
 group.history_graph:
   order: 7
+
+group.all_fans:
+  hidden: true

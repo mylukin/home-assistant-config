@@ -1,9 +1,0 @@
-- platform: command_line
-  name: Home Temperature
-  command: /usr/bin/curl -s https://home.lukin.cn/opendoor.php | grep 'wendu' | awk '{print $2}' | sed 's/[\",]//g' | sed 's/\u00b0//g'
-  unit_of_measurement: "°C"
-
-- platform: command_line
-  name: Home Humidity
-  command: /usr/bin/curl -s https://home.lukin.cn/opendoor.php | grep 'shidu' | awk '{print $2}' | sed 's/[\",]//g' | sed 's/%//g'
-  unit_of_measurement: "%"
