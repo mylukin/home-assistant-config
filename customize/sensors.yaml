@@ -118,6 +118,7 @@ sensor.living_room_filter_life:
 
 sensor.living_room_humidity:
   friendly_name: 客厅湿度
+  icon: mdi:water-percent
 
 sensor.living_room_temperature:
   friendly_name: 客厅温度
