@@ -6,4 +6,3 @@ system_monitor:
     - sensor.ping_google_cloud
     - sensor.ping_dgc
     - sensor.ping_mofang_cloud
-    - sensor.ping_router
