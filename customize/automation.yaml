@@ -24,3 +24,6 @@ automation.auto_close_printer:
 
 automation.welcome_home:
   friendly_name: 欢迎回家
+
+automation.open_purifying_air:
+  friendly_name: 自动打开空气净化器
