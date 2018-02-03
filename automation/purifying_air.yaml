@@ -74,6 +74,8 @@
           10
           {% endif -%}
 
+    - delay: 00:00:05
+
     # 摇头
     - service: fan.oscillate
       data_template:
