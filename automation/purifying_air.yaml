@@ -11,17 +11,23 @@
       below: 999
 
   condition:
-    condition: or
+    condition: and
     conditions:
-      - condition: numeric_state
-        entity_id: sensor.living_room_air_quality
-        above: 1
-        below: 4
+      - condition: state
+        entity_id: fan.living_room
+        state: 'off'
 
-      - condition: numeric_state
-        entity_id: sensor.living_room_dust
-        above: 3
-        below: 10
+      - condition: or
+        conditions:
+          - condition: numeric_state
+            entity_id: sensor.living_room_air_quality
+            above: 1
+            below: 4
+
+          - condition: numeric_state
+            entity_id: sensor.living_room_dust
+            above: 3
+            below: 10
 
   action:
     - service: script.set_vlc_volume
@@ -83,6 +89,7 @@
         oscillating: true
 
 
+
 - alias: 'Close Purifying air'
   trigger:
     - platform: numeric_state
@@ -94,6 +101,11 @@
       entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
       above: 0
       below: 100
+
+  condition:
+    - condition: state
+      entity_id: fan.living_room
+      state: 'on'
 
   action:
     - service: script.set_vlc_volume
@@ -131,6 +143,5 @@
     - service: fan.turn_off
       data_template:
         entity_id: fan.living_room
-
 
 
