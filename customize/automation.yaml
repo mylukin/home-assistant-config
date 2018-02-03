@@ -27,3 +27,6 @@ automation.welcome_home:
 
 automation.open_purifying_air:
   friendly_name: 自动打开空气净化器
+
+automation.close_purifying_air:
+  friendly_name: 自动关闭空气净化器
