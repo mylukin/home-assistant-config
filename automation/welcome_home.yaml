@@ -4,7 +4,6 @@
     entity_id:
       - device_tracker.lukin
       - device_tracker.liuyin
-      - device_tracker.smartisanu2pro
     from: not_home
     to: home
 
