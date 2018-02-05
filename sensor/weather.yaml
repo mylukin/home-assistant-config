@@ -19,3 +19,4 @@
     - shanghai
   stations:
     - Shanghai Normal College Primary Division, Shanghai
+  scan_interval: 1800
