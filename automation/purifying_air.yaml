@@ -10,6 +10,16 @@
       above: 100
       below: 999
 
+    - platform: numeric_state
+      entity_id: sensor.living_room_air_quality
+      above: 1
+      below: 4
+
+    - platform: numeric_state
+      entity_id: sensor.living_room_dust
+      above: 3
+      below: 10
+
   condition:
     condition: and
     conditions:
@@ -101,6 +111,16 @@
       entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
       above: 0
       below: 100
+
+    - platform: numeric_state
+      entity_id: sensor.living_room_air_quality
+      above: 0
+      below: 1
+
+    - platform: numeric_state
+      entity_id: sensor.living_room_dust
+      above: 0
+      below: 3
 
   condition:
     - condition: state
