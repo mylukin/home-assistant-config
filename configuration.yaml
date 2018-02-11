@@ -125,6 +125,7 @@ logger:
     homeassistant.helpers.script: warn
     homeassistant.helpers.entity: warn
     custom_components.device_tracker.hiwifi: warn
+    custom_components.sensor.moji_weather: warn
     homeassistant.exceptions: info
     py.warnings: error
     requests.packages.urllib3.connectionpool: critical

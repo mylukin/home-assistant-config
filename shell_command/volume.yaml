@@ -4,8 +4,8 @@ set_volume_to_max: >-
 
 # 保存当前音量
 save_player_current_volume: >-
-  amixer | grep 'Playback' | awk 'NR==3{print $4}'| sed 's/[^0-9]//g' > /var/run/data/pre_volume.data
+  amixer | grep 'Playback' | awk 'NR==3{print $4}'| sed 's/[^0-9]//g' > /tmp/pre_volume.data
 
 # 调整回原来的音量
 set_player_volume_to_pre: >-
-  volume=$(cat /var/run/data/pre_volume.data) && amixer -c 0 sset 'PCM',0 ${volume}% unmute
+  volume=$(cat /tmp/pre_volume.data) && amixer -c 0 sset 'PCM',0 ${volume}% unmute
