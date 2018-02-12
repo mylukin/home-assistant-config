@@ -20,11 +20,9 @@ sensor.ping_router:
 sensor.dht_sensor_humidity:
   friendly_name: 室内湿度(PI)
   icon: mdi:water-percent
-  homebridge_hidden: false
 
 sensor.dht_sensor_temperature:
   friendly_name: 室内温度(PI)
-  homebridge_hidden: false
 
 sensor.canon_lbp6030w_6018w:
   friendly_name: 打印机队列
@@ -122,6 +120,8 @@ sensor.living_room_filter_life:
 sensor.living_room_humidity:
   friendly_name: 客厅湿度
   icon: mdi:water-percent
+  homebridge_hidden: false
 
 sensor.living_room_temperature:
   friendly_name: 客厅温度
+  homebridge_hidden: false
