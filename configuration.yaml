@@ -24,6 +24,11 @@ homeassistant:
 
     "device_tracker.*":
       hidden: true
+      homebridge_hidden: true
+
+    "script.*":
+      hidden: true
+      homebridge_hidden: true
 
 
 # 启用前端
