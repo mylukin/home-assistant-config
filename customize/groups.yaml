@@ -21,3 +21,6 @@ group.history_graph:
 
 group.all_fans:
   hidden: true
+
+group.all_scripts:
+  hidden: true
