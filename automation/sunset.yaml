@@ -26,4 +26,4 @@
         {{ not is_state('media_player.speaker_vlc', 'playing') }}
 
     # 恢复播放器的音量
-    - service: shell_command.set_player_volume_to_pre
+    - service: script.set_volume_to_pre

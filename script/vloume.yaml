@@ -12,3 +12,12 @@ set_vlc_volume:
           {%- else -%}
           1
           {%- endif %}
+
+set_volume_to_pre:
+  alias: 'Set Volume to pre'
+  sequence:
+    - service: shell_command.set_player_volume_to_pre
+    - service: media_player.volume_mute
+      entity_id: media_player.speaker_vlc
+      data_template:
+        is_volume_muted: false
