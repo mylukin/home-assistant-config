@@ -1,0 +1,3 @@
+# 重启光猫路由器
+restart_f450g_router: >-
+  ./shell_scripts/restart_f450g_router.sh

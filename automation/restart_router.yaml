@@ -1,0 +1,13 @@
+- alias: 'Restart Router'
+  trigger:
+    - platform: time
+      at: '02:30:00'
+
+  condition:
+    condition: time
+    weekday:
+      - mon
+
+  action:
+    - service: shell_command.restart_f450g_router
+
