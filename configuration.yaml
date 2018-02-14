@@ -18,6 +18,9 @@ homeassistant:
     automation:
       initial_state: on
 
+    calendar:
+      initial_state: on
+
   customize_glob:
     "*":
       homebridge_hidden: true
@@ -240,3 +243,11 @@ panel_iframe:
     title: 'Aria2'
     icon: mdi:cloud-download
     url: 'https://down.lukin.cn/'
+
+calendar:
+  - platform: caldav
+    url: https://cloud.lukin.cn/remote.php/dav/calendars/Lukin/personal/
+    username: lukin
+    password: !secret calendar_password
+    calendars:
+      - Personal
