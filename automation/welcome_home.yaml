@@ -7,10 +7,7 @@
     from: not_home
     to: home
 
-    for:
-      hours: 0
-      minutes: 2
-      seconds: 0
+    for: 00:02:00
 
   action:
     - service: script.set_vlc_volume
@@ -28,6 +25,44 @@
             "欢迎" ~ person + "回家！",
             "猜猜是谁回来了？是" ~ person,
             "告诉你一个秘密！" ~ person + "回来了",
+          ] | random }}
+          {%- endmacro -%}
+          {{greeting_sentence(person)}}
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    # 恢复播放器的音量
+    - service: script.set_volume_to_pre
+
+
+- alias: 'Welcome Guest'
+  trigger:
+    platform: state
+    entity_id:
+      - device_tracker.luke
+      - device_tracker.lirui_iphone
+    from: not_home
+    to: home
+
+    for: 00:00:20
+
+  action:
+    - service: script.set_vlc_volume
+      data:
+        value: 0.6
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: >
+          {% set person = trigger.entity_id.split('.')[1] %}
+          {% set person = states.device_tracker[person].attributes.friendly_name %}
+          {%- macro greeting_sentence(person) -%}
+          {{ [
+            "猜猜是谁来了？是" ~ person,
+            "告诉你一个秘密，" ~ person + "来了！",
           ] | random }}
           {%- endmacro -%}
           {{greeting_sentence(person)}}

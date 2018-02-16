@@ -13,6 +13,15 @@ device_tracker.liuyin:
   hidden: false
   icon: mdi:cellphone-iphone
 
+
+device_tracker.luke:
+  friendly_name: 卢振
+  hidden: false
+
+device_tracker.lirui_iphone:
+  friendly_name: 李蕊
+  hidden: false
+
 device_tracker.printer:
   friendly_name: 打印机
   icon: mdi:printer
