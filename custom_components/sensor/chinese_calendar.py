@@ -73,7 +73,7 @@ class ChineseCalendarSensor(Entity):
 
     def update(self):
         """Get the latest data from Yahoo! and updates the states."""
-        is_holiday, holiday_name = calendar.get_holiday_detail()
+        is_holiday, holiday_name = calendar.get_holiday_detail(datetime.today().date())
         if is_holiday:
             self._state = 'holiday'
             self._attr_name = holiday_name
