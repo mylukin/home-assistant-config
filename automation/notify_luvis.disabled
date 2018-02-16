@@ -1,17 +1,13 @@
 - alias: 'Notify Luvis for wake up'
   trigger:
     - platform: time
-      at: '06:30:00'
+      at: '06:31:00'
 
   condition:
-    # 周一到周五
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    # 工作日
+    - condition: state
+      entity_id: sensor.chinese_calendar
+      state: 'workday'
 
 
   action:
@@ -49,14 +45,10 @@
       at: '07:31:00'
 
   condition:
-    # 周一到周五
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    # 工作日
+    - condition: state
+      entity_id: sensor.chinese_calendar
+      state: 'workday'
 
   action:
     - service: script.set_vlc_volume

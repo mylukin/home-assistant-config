@@ -3,6 +3,12 @@
     platform: sun
     event: sunrise
 
+  condition:
+    # 工作日
+    - condition: state
+      entity_id: sensor.chinese_calendar
+      state: 'workday'
+
   action:
     - service: script.set_vlc_volume
       data:

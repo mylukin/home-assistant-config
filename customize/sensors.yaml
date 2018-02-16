@@ -127,3 +127,6 @@ sensor.living_room_humidity:
 sensor.living_room_temperature:
   friendly_name: 客厅温度
   homebridge_hidden: false
+
+sensor.chinese_calendar:
+  hidden: true

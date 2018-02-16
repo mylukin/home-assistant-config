@@ -3,31 +3,35 @@
   trigger:
     - platform: time
       minutes: 00
-      seconds: 10
+      seconds: 01
     - platform: time
       minutes: 30
-      seconds: 10
+      seconds: 01
 
   condition:
     condition: or
     conditions:
-      # 周一到周五
-      - condition: time
-        after: '07:30:00'
-        before: '22:00:00'
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-      # 周六、周日
-      - condition: time
-        after: '08:00:00'
-        before: '22:00:00'
-        weekday:
-          - sat
-          - sun
+      - condition: and
+        conditions:
+          # 工作日
+          - condition: time
+            after: '07:00:00'
+            before: '22:00:00'
+
+          - condition: state
+            entity_id: sensor.chinese_calendar
+            state: 'workday'
+
+      - condition: and
+        conditions:
+          # 节假日
+          - condition: time
+            after: '09:00:00'
+            before: '22:00:00'
+
+          - condition: state
+            entity_id: sensor.chinese_calendar
+            state: 'holiday'
 
   action:
     - service: script.set_vlc_volume

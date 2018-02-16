@@ -1,17 +1,13 @@
-- alias: 'Notify Weather'
+- alias: 'Notify Weather Workday'
   trigger:
     - platform: time
-      at: '07:50:00'
+      at: '06:50:00'
 
   condition:
-    # 周一到周五
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    # 工作日
+    - condition: state
+      entity_id: sensor.chinese_calendar
+      state: 'workday'
 
   action:
     - service: script.set_vlc_volume
@@ -57,17 +53,16 @@
     - service: script.set_volume_to_pre
 
 
-- alias: 'Notify Weather 2'
+- alias: 'Notify Weather Holiday'
   trigger:
     - platform: time
-      at: '08:01:00'
+      at: '08:50:00'
 
   condition:
-    # 周一到周五
-    - condition: time
-      weekday:
-        - sat
-        - sun
+    # 节假日
+    - condition: state
+      entity_id: sensor.chinese_calendar
+      state: 'holiday'
 
   action:
     - service: script.set_vlc_volume
