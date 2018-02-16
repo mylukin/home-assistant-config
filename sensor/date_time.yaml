@@ -2,3 +2,5 @@
   display_options:
     - time
     - date
+
+- platform: chinese_calendar
