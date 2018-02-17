@@ -130,3 +130,6 @@ sensor.living_room_temperature:
 
 sensor.chinese_calendar:
   hidden: true
+
+sensor.vipkid:
+  hidden: true
