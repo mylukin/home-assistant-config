@@ -26,15 +26,15 @@
             {{- states('sensor.moji_weather_temperature_min') }}度，
             {{- states('sensor.moji_weather_tips') -}}
             空气质量：
-            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 50 -%}
+            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 50 -%}
             优
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 100 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 100 -%}
             良
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 150 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 150 -%}
             轻度污染
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 200 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 200 -%}
             中度污染
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 300 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 300 -%}
             重度污染
             {%- else -%}
             严重污染
@@ -81,15 +81,15 @@
             {{- states('sensor.moji_weather_temperature_min') }}度，
             {{- states('sensor.moji_weather_tips') -}}
             空气质量：
-            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 50 -%}
+            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 50 -%}
             优
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 100 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 100 -%}
             良
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 150 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 150 -%}
             轻度污染
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 200 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 200 -%}
             中度污染
-            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | float <= 300 -%}
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 300 -%}
             重度污染
             {%- else -%}
             严重污染
