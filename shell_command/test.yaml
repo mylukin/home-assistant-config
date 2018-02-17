@@ -1,0 +1,2 @@
+test: >-
+  echo $(date +'%Y-%m-%d %X') >> /tmp/test.log

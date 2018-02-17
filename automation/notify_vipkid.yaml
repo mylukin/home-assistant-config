@@ -1,0 +1,7 @@
+- alias: 'Notify VIPKID'
+  trigger:
+    - platform: mqtt
+      topic: vipkid/class
+
+  action:
+    - service: shell_command.test
