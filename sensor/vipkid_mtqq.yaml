@@ -1,0 +1,19 @@
+- platform: mqtt
+  state_topic: vipkid/class
+  name: Start Time
+  value_template: '{{ value_json.time }}'
+
+- platform: mqtt
+  state_topic: vipkid/class
+  name: Teacher
+  value_template: '{{ value_json.teacher }}'
+
+- platform: mqtt
+  state_topic: vipkid/class
+  name: Class Number
+  value_template: '{{ value_json.number }}'
+
+- platform: mqtt
+  state_topic: vipkid/class
+  name: Lesson ID
+  value_template: '{{ value_json.lesson_id }}'
