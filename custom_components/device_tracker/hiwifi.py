@@ -161,7 +161,7 @@ def _get_token(host, username, password):
             result = res.json()
         except ValueError:
             # If JSON decoder could not parse the response
-            _LOGGER.exception("Failed to parse response from mi router")
+            _LOGGER.exception("Failed to parse response from hifiwi router")
             return
         try:
             return result['stok'], res.cookies
