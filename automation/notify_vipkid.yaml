@@ -14,8 +14,13 @@
       data_template:
         entity_id: media_player.speaker_vlc
         message: >-
-          今天{{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%H') -}}点
-          {{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%M') -}}分，有一节英语课。
+          {%- for num in range(0,2) -%}
+            今天{{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%H') -}}点
+            {{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%M') -}}分，有一节英语课
+            {%- if not loop.last -%}
+            ，
+            {%- endif -%}
+          {% endfor -%}
 
     - delay: 00:00:05
     - wait_template: >-
