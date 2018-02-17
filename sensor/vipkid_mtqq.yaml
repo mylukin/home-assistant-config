@@ -1,9 +1,10 @@
 - platform: mqtt
   state_topic: vipkid/class
   name: VIPKID
-  value_template: '{{ value_json.state }}'
+  value_template: '{{ value_json.left }}'
   json_attributes:
     - time
+    - left
     - teacher
     - number
     - topic
