@@ -137,7 +137,7 @@
         entity_id: fan.living_room
         state: 'on'
 
-      - condition: or
+      - condition: and
         conditions:
           - condition: numeric_state
             entity_id: sensor.living_room_air_quality
