@@ -41,7 +41,7 @@
     - service: media_player.play_media
       data_template:
         entity_id: media_player.speaker_vlc
-        media_content_id: >
+        media_content_id: >-
           {% if now().strftime("%M")|int == 30 %}
           http://home.lukin.cn/sounds/cuckoo-clock-01.mp3
           {% else %}

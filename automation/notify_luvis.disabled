@@ -18,7 +18,7 @@
     - service: tts.baidu_say
       data_template:
         entity_id: media_player.speaker_vlc
-        message: >
+        message: >-
           {%- for num in range(0,3) -%}
             {{ [
               "卢想，起床啦！",

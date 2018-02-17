@@ -1,7 +1,25 @@
 - alias: 'Notify VIPKID'
   trigger:
-    - platform: mqtt
-      topic: vipkid/class
+    - platform: numeric_state
+      entity_id: sensor.vipkid
+      above: 60
+      below: 180
 
   action:
-    - service: shell_command.test
+    - service: script.set_vlc_volume
+      data:
+        value: 0.6
+
+    - service: tts.baidu_say
+      data_template:
+        entity_id: media_player.speaker_vlc
+        message: >-
+          今天{{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%H') -}}点
+          {{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%M') -}}分，有一节英语课。
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    # 恢复播放器的音量
+    - service: script.set_volume_to_pre

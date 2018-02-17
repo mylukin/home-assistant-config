@@ -17,7 +17,7 @@
     - service: tts.baidu_say
       data_template:
         entity_id: media_player.speaker_vlc
-        message: >
+        message: >-
           {%- for num in range(0,2) -%}
             今天天气{{ states('sensor.moji_weather_condition') }}，当前气温
             {{- states('sensor.moji_weather_temperature') }}度，当前天气
@@ -72,7 +72,7 @@
     - service: tts.baidu_say
       data_template:
         entity_id: media_player.speaker_vlc
-        message: >
+        message: >-
           {%- for num in range(0,2) -%}
             今天天气{{ states('sensor.moji_weather_condition') }}，当前气温
             {{- states('sensor.moji_weather_temperature') }}度，当前天气
