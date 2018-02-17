@@ -17,7 +17,7 @@
           {%- for num in range(0,2) -%}
             卢维斯，今天{{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%H') -}}点
             {{- strptime(states.sensor.vipkid.attributes.time, '%Y-%m-%d %X').strftime('%M') -}}分，将要开始和
-            {{- states.sensor.vipkid.attributes.teacher -}}老师的英文课！
+            {{ states.sensor.vipkid.attributes.teacher }} 老师的英文课！
             赶快进教室准备上课吧！
           {% endfor -%}
 
