@@ -33,6 +33,10 @@ homeassistant:
       hidden: true
       homebridge_hidden: true
 
+    "sensor.vipkid_*":
+      hidden: true
+      homebridge_hidden: true
+
 
 # 启用前端
 frontend:
