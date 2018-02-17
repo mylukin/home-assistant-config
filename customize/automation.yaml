@@ -10,11 +10,11 @@ automation.notify_luvis_for_to_school:
 automation.notify_luvis_for_wake_up:
   friendly_name: 提醒卢想起床了
 
-automation.notify_weather:
-  friendly_name: 天气情况提醒：周一到周五
+automation.notify_weather_holiday:
+  friendly_name: 节假日天气情况提醒
 
-automation.notify_weather_2:
-  friendly_name: 天气情况提醒：周六、周日
+automation.notify_weather_workday:
+  friendly_name: 工作日天气情况提醒
 
 automation.auto_open_printer:
   friendly_name: 自动打开打印机
@@ -24,6 +24,15 @@ automation.auto_close_printer:
 
 automation.welcome_home:
   friendly_name: 欢迎回家
+
+automation.welcome_guest:
+  friendly_name: 欢迎客人
+
+automation.restart_router:
+  friendly_name: 自动重启光猫
+
+automation.notify_vipkid:
+  friendly_name: 通知儿子上英语课
 
 automation.open_purifying_air:
   friendly_name: 自动打开空气净化器
