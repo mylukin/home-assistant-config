@@ -122,12 +122,12 @@
 
     - platform: numeric_state
       entity_id: sensor.living_room_air_quality
-      below: 3
+      below: 4
       for: '00:05:00'
 
     - platform: numeric_state
       entity_id: sensor.living_room_dust
-      below: 3
+      below: 4
       for: '00:05:00'
 
   condition:
@@ -141,11 +141,11 @@
         conditions:
           - condition: numeric_state
             entity_id: sensor.living_room_air_quality
-            below: 3
+            below: 4
 
           - condition: numeric_state
             entity_id: sensor.living_room_dust
-            below: 3
+            below: 4
 
   action:
     - service: script.set_vlc_volume
