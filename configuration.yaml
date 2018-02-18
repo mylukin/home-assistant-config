@@ -167,6 +167,9 @@ logbook:
       - sun.sun
       - sensor.date
       - sensor.time
+      - sensor.last_boot
+      - sensor.since_last_boot
+      - sensor.load_1m
 
 
 # 支持随着时间的推移跟踪状态变化
