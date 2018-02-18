@@ -256,8 +256,8 @@ calendar:
       - Personal
 
 notify:
-  - name: Lukin Twitter
-    platform: twitter
+  - platform: twitter
+    name: Lukin Twitter
     consumer_key: !secret notify_twitter_consumer_key
     consumer_secret: !secret notify_twitter_consumer_secret
     access_token: !secret notify_twitter_access_token
