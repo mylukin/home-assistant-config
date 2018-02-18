@@ -254,3 +254,11 @@ calendar:
     password: !secret calendar_password
     calendars:
       - Personal
+
+notify:
+  - name: Lukin Twitter
+    platform: twitter
+    consumer_key: !secret notify_twitter_consumer_key
+    consumer_secret: !secret notify_twitter_consumer_secret
+    access_token: !secret notify_twitter_access_token
+    access_token_secret: !secret notify_twitter_access_token_secret
