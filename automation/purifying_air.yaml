@@ -3,22 +3,24 @@
     - platform: numeric_state
       entity_id: sensor.moji_weather_air_quality
       above: 100
-      below: 999
+      for: '00:05:00'
 
     - platform: numeric_state
       entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
       above: 100
-      below: 999
+      for: '00:05:00'
 
     - platform: numeric_state
       entity_id: sensor.living_room_air_quality
       above: 3
-      below: 10
+      for: '00:05:00'
 
     - platform: numeric_state
       entity_id: sensor.living_room_dust
       above: 3
-      below: 10
+      for: '00:05:00'
+
+
 
   condition:
     condition: and
@@ -32,12 +34,10 @@
           - condition: numeric_state
             entity_id: sensor.living_room_air_quality
             above: 3
-            below: 10
 
           - condition: numeric_state
             entity_id: sensor.living_room_dust
             above: 3
-            below: 10
 
   action:
     - service: script.set_vlc_volume
@@ -112,23 +112,23 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.moji_weather_air_quality
-      above: 0
       below: 100
+      for: '00:05:00'
 
     - platform: numeric_state
       entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
-      above: 0
       below: 100
+      for: '00:05:00'
 
     - platform: numeric_state
       entity_id: sensor.living_room_air_quality
-      above: 0
       below: 3
+      for: '00:05:00'
 
     - platform: numeric_state
       entity_id: sensor.living_room_dust
-      above: 0
       below: 3
+      for: '00:05:00'
 
   condition:
     condition: and
@@ -141,12 +141,10 @@
         conditions:
           - condition: numeric_state
             entity_id: sensor.living_room_air_quality
-            above: 0
             below: 3
 
           - condition: numeric_state
             entity_id: sensor.living_room_dust
-            above: 0
             below: 3
 
   action:
