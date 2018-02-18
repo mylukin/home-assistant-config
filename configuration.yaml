@@ -150,7 +150,7 @@ recorder:
   db_url: !secret recorder_db_url
   exclude:
     domains:
-      - automation
+      - automatio
       - updater
       - device_tracker
     entities:
@@ -163,7 +163,6 @@ logbook:
   exclude:
     domains:
       - media_player
-      - automation
     entities:
       - sun.sun
       - sensor.date
