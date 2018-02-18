@@ -44,12 +44,12 @@
       data_template:
         value: 0.6
 
-    # 9点到23点之间播放声音
+    # 9点到22点之间播放声音
     - service: media_player.volume_mute
       entity_id: media_player.speaker_vlc
       data_template:
         is_volume_muted: >-
-          {%- if now().strftime("%H")|int >= 9 and now().strftime("%H")|int < 23 -%}
+          {%- if now().strftime("%H")|int >= 9 and now().strftime("%H")|int <= 22 -%}
           false
           {%- else -%}
           true
@@ -107,7 +107,6 @@
         oscillating: true
 
 
-
 - alias: 'Close Purifying air'
   trigger:
     - platform: numeric_state
@@ -152,12 +151,12 @@
       data:
         value: 0.6
 
-    # 9点到23点之间播放声音
+    # 9点到22点之间播放声音
     - service: media_player.volume_mute
       entity_id: media_player.speaker_vlc
       data_template:
         is_volume_muted: >-
-          {%- if now().strftime("%H")|int >= 9 and now().strftime("%H")|int < 23 -%}
+          {%- if now().strftime("%H")|int >= 9 and now().strftime("%H")|int <= 22 -%}
           false
           {%- else -%}
           true
@@ -200,7 +199,7 @@
     # 恢复播放器的音量
     - service: script.set_volume_to_pre
 
-    # 打开净化器
+    # 关闭净化器
     - service: fan.turn_off
       data_template:
         entity_id: fan.living_room
