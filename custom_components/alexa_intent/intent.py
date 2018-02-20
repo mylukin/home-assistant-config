@@ -234,7 +234,7 @@ def async_handle_intent(hass, message):
                 # 音频类型
                 audio_type = intent_response.directives[intent_directive]['audio_type']
                 # 音频URL
-                audio_url = intent_response.directives[intent_directive]['audio_url']
+                audio_url = intent_response.directives[intent_directive]['audio_url'].async_render()
                 _LOGGER.info("audio_type: %s, audio_url: %s", audio_type, audio_url)
                 playlist_save(hass, 'play', {
                     'audio_type': audio_type,
@@ -710,7 +710,7 @@ class IntentResponse:
         """Set directives response."""
         self.directives[directive_type] = {
             'audio_type': audio_type,
-            'audio_url': audio_url.async_render(),
+            'audio_url': audio_url,
         }
 
     @callback
