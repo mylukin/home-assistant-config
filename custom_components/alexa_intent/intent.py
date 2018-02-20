@@ -236,7 +236,10 @@ def async_handle_intent(hass, message):
                 # 音频URL
                 audio_url = intent_response.directives[intent_directive]['audio_url']
                 _LOGGER.info("audio_type: %s, audio_url: %s", audio_type, audio_url)
-                playlist_save(hass, 'play', intent_response.directives[intent_directive])
+                playlist_save(hass, 'play', {
+                    'audio_type': audio_type,
+                    'audio_url': audio_url,
+                })
                 alexa_response.add_audio_play(audio_type, audio_url, 'REPLACE_ALL')
             # 自动下一首
             elif alexa_directive.value == DirectiveType.PlaybackNearlyFinished.value:
