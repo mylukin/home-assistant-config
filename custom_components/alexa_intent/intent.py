@@ -225,8 +225,7 @@ def async_handle_intent(hass, message):
             break
 
     for intent_directive, alexa_directive in DIRECTIVE_MAPPINGS.items():
-        _LOGGER.info("intent_directive: %s, intent_response.directives: %s", intent_directive,
-                     intent_response.directives)
+        #_LOGGER.info("intent_directive: %s, intent_response.directives: %s", intent_directive, intent_response.directives)
         if intent_directive in intent_response.directives:
             _LOGGER.info("Found %s, %s", intent_directive, alexa_directive.value)
 
