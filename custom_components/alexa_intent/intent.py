@@ -707,7 +707,7 @@ class IntentResponse:
         """Set directives response."""
         self.directives[directive_type] = {
             'audio_type': audio_type,
-            'audio_url': audio_url,
+            'audio_url': audio_url.render(),
         }
 
     @callback
