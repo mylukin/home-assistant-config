@@ -225,7 +225,7 @@ def async_handle_intent(hass, message):
             break
 
     for intent_directive, alexa_directive in DIRECTIVE_MAPPINGS.items():
-        #_LOGGER.info("intent_directive: %s, intent_response.directives: %s", intent_directive, intent_response.directives)
+        # _LOGGER.info("intent_directive: %s, intent_response.directives: %s", intent_directive, intent_response.directives)
         if intent_directive in intent_response.directives:
             _LOGGER.info("Found %s, %s", intent_directive, alexa_directive.value)
 
@@ -255,8 +255,9 @@ def async_handle_intent(hass, message):
                 _LOGGER.info("PlaybackNearlyFinished, token: %s, audio_type: %s, audio_url: %s", token, audio_type,
                              audio_url)
                 alexa_response.add_audio_play(audio_type, audio_url, 'ENQUEUE', token)
-            # 手动下一首
-            elif alexa_directive.value == DirectiveType.next.value:
+            # 手动下一首，or 播放失败
+            elif alexa_directive.value == DirectiveType.next.value \
+                    or alexa_directive.value == DirectiveType.PlaybackFailed.value:
                 # 获取保存的播放列表
                 directives = get_playlist(hass, 'play')
                 _LOGGER.info("directives: %s", directives)
