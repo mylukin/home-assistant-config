@@ -3,8 +3,6 @@ amzn1.ask.skill.e94acf28-cba3-4126-ac1f-32f0229b9dcd:
   speech:
     text: >-
       {{ [
-        "OK",
-        "No Problem",
         "Enjoy your music!"
       ] | random }}
 
@@ -13,13 +11,24 @@ amzn1.ask.skill.e94acf28-cba3-4126-ac1f-32f0229b9dcd:
     audio_type: api
     audio_url: !secret alexa_intent_top3
 
+# 播放每日推荐
+PlayMyMusicIntent:
+  speech:
+    text: >-
+      {{ [
+        "Enjoy your music!"
+      ] | random }}
+
+  directives:
+    type: play
+    audio_type: api
+    audio_url: !secret alexa_intent_recommend
+
 # 播放私人FM
 PlayPersonalFMIntent:
   speech:
     text: >-
       {{ [
-        "OK",
-        "No Problem",
         "Enjoy your music!"
       ] | random }}
 
@@ -33,8 +42,6 @@ PlayILikeMusicIntent:
   speech:
     text: >-
       {{ [
-        "OK",
-        "No Problem",
         "Enjoy your music!"
       ] | random }}
 
