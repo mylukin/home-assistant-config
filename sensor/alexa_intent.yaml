@@ -50,10 +50,56 @@
           我喜欢的音乐
           {%- elif is_state('sensor.echo_dot_play_song_list', 'recommend') -%}
           每日推荐
-          {%- elif is_state('sensor.echo_dot_play_song_list', 'top3') -%}
-          云音乐飙升榜
           {%- elif is_state('sensor.echo_dot_play_song_list', 'personal_fm') -%}
           私人FM
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top0') -%}
+          云音乐新歌榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top1') -%}
+          云音乐热歌榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top2') -%}
+          网易原创歌曲榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top3') -%}
+          云音乐飙升榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top4') -%}
+          云音乐电音榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top5') -%}
+          UK排行榜周榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top6') -%}
+          美国Billboard周榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top7') -%}
+          KTV嗨榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top8') -%}
+          iTunes榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top9') -%}
+          Hit FM Top榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top10') -%}
+          日本Oricon周榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top11') -%}
+          韩国Melon排行榜周榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top12') -%}
+          韩国Mnet排行榜周榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top13') -%}
+          韩国Melon原声周榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top14') -%}
+          中国TOP排行榜(港台榜)
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top15') -%}
+          中国TOP排行榜(内地榜)
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top16') -%}
+          香港电台中文歌曲龙虎榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top17') -%}
+          华语金曲榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top18') -%}
+          中国嘻哈榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top19') -%}
+          法国 NRJ EuroHot 30周榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top20') -%}
+          台湾Hito排行榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top21') -%}
+          Beatport全球电子舞曲榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top22') -%}
+          云音乐ACG音乐榜
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top23') -%}
+          云音乐嘻哈榜
           {%- endif -%}
         {%- elif is_state('sensor.echo_dot_play_song_state', 'stop') -%}
         已停止播放

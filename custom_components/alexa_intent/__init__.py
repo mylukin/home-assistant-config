@@ -55,7 +55,7 @@ CONFIG_SCHEMA = vol.Schema({
             vol.Optional(CONF_DIRECTIVES): {
                 vol.Required(CONF_TYPE): cv.string,
                 vol.Optional(CONF_AUDIO_TYPE, default='mp3'): cv.string,
-                vol.Optional(CONF_AUDIO_URL, default=None): cv.string,
+                vol.Optional(CONF_AUDIO_URL, default=''): cv.template,
             },
             vol.Optional(CONF_KEEP, default=False): cv.boolean
         }

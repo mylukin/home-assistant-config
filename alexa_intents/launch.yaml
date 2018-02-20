@@ -9,7 +9,34 @@ amzn1.ask.skill.e94acf28-cba3-4126-ac1f-32f0229b9dcd:
   directives:
     type: play
     audio_type: api
-    audio_url: !secret alexa_intent_top3
+    audio_url: >-
+      {{ [
+        "https://music.lukin.cn/top0.json",
+        "https://music.lukin.cn/top1.json",
+        "https://music.lukin.cn/top2.json",
+        "https://music.lukin.cn/top3.json",
+        "https://music.lukin.cn/top4.json",
+        "https://music.lukin.cn/top5.json",
+        "https://music.lukin.cn/top6.json",
+        "https://music.lukin.cn/top7.json",
+        "https://music.lukin.cn/top8.json",
+        "https://music.lukin.cn/top9.json",
+        "https://music.lukin.cn/top10.json",
+        "https://music.lukin.cn/top11.json",
+        "https://music.lukin.cn/top12.json",
+        "https://music.lukin.cn/top13.json",
+        "https://music.lukin.cn/top14.json",
+        "https://music.lukin.cn/top15.json",
+        "https://music.lukin.cn/top16.json",
+        "https://music.lukin.cn/top17.json",
+        "https://music.lukin.cn/top18.json",
+        "https://music.lukin.cn/top19.json",
+        "https://music.lukin.cn/top20.json",
+        "https://music.lukin.cn/top21.json",
+        "https://music.lukin.cn/top22.json",
+        "https://music.lukin.cn/top23.json"
+      ] | random }}
+
 
 # 播放每日推荐
 PlayMyMusicIntent:
