@@ -50,6 +50,8 @@
           我喜欢的音乐
           {%- elif is_state('sensor.echo_dot_play_song_list', 'recommend') -%}
           每日推荐
+          {%- elif is_state('sensor.echo_dot_play_song_list', 'top3') -%}
+          云音乐飙升榜
           {%- elif is_state('sensor.echo_dot_play_song_list', 'personal_fm') -%}
           私人FM
           {%- endif -%}
