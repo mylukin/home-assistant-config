@@ -1,9 +1,23 @@
 - alias: 'Notify VIPKID'
   trigger:
+    # 定时提醒
+    - platform: time
+      at: '17:50:00'
+
+    # 3分钟内提醒
     - platform: numeric_state
       entity_id: sensor.vipkid
-      above: 60
       below: 180
+
+    # 1小时内提醒
+    - platform: numeric_state
+      entity_id: sensor.vipkid
+      below: 3600
+
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.vipkid
+      below: 43200
 
   action:
     - service: script.set_vlc_volume
