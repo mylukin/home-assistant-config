@@ -2,12 +2,17 @@
   trigger:
     # 定时提醒
     - platform: time
-      at: '17:50:00'
+      at: '18:05:00'
 
-    # 3分钟内提醒
+    # 5分钟内提醒
     - platform: numeric_state
       entity_id: sensor.vipkid
-      below: 180
+      below: 300
+
+    # 15分钟提醒
+    - platform: numeric_state
+      entity_id: sensor.vipkid
+      below: 900
 
     # 1小时内提醒
     - platform: numeric_state
