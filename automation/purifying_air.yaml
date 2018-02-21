@@ -132,19 +132,14 @@
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: fan.living_room
-        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.living_room_air_quality
+        below: 4
 
-      - condition: and
-        conditions:
-          - condition: numeric_state
-            entity_id: sensor.living_room_air_quality
-            below: 4
+      - condition: numeric_state
+        entity_id: sensor.living_room_dust
+        below: 4
 
-          - condition: numeric_state
-            entity_id: sensor.living_room_dust
-            below: 4
 
   action:
     - service: script.set_vlc_volume
