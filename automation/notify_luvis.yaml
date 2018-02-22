@@ -4,10 +4,25 @@
       at: '06:31:00'
 
   condition:
-    # 工作日
-    - condition: state
-      entity_id: sensor.chinese_calendar
-      state: 'workday'
+    condition: and
+    conditions:
+      # 工作日
+      - condition: state
+        entity_id: sensor.chinese_calendar
+        state: 'workday'
+
+      # 非暑假
+      - condition: template
+        value_template: >-
+          {% set holiday_start = as_timestamp('{}-07-01 00:00:00'.format(now().year)) %}
+          {% set holiday_end = as_timestamp('{}-09-01 00:00:00'.format(now().year)) %}
+          {% set current_time = as_timestamp(now()) %}
+
+          {%- if holiday_start <= current_time and current_time < holiday_end -%}
+          false
+          {%- else -%}
+          true
+          {%- endif -%}
 
 
   action:
@@ -45,10 +60,25 @@
       at: '07:31:00'
 
   condition:
-    # 工作日
-    - condition: state
-      entity_id: sensor.chinese_calendar
-      state: 'workday'
+    condition: and
+    conditions:
+      # 工作日
+      - condition: state
+        entity_id: sensor.chinese_calendar
+        state: 'workday'
+
+      # 非暑假
+      - condition: template
+        value_template: >-
+          {% set holiday_start = as_timestamp('{}-07-01 00:00:00'.format(now().year)) %}
+          {% set holiday_end = as_timestamp('{}-09-01 00:00:00'.format(now().year)) %}
+          {% set current_time = as_timestamp(now()) %}
+
+          {%- if holiday_start <= current_time and current_time < holiday_end -%}
+          false
+          {%- else -%}
+          true
+          {%- endif -%}
 
   action:
     - service: script.set_vlc_volume
