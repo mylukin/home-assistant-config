@@ -132,7 +132,7 @@ sensor.echo_dot_play_song_title:
 
 sensor.echo_dot_play_song_name:
   friendly_name: 正在播放的歌曲
-  hidden: true
+  hidden: false
   homebridge_hidden: true
 
 sensor.echo_dot_play_song_author:
