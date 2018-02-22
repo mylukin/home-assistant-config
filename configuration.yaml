@@ -76,6 +76,13 @@ dyson:
     - device_id: NK6-CN-HFA1117A
       device_ip: 192.168.199.60
 
+# xiaomi
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - host: 192.168.199.56
+      key: !secret xiaomi_aqara_gateway_key
+
 # ifttt
 ifttt:
   key: !secret ifttt_key
