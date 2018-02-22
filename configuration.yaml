@@ -22,7 +22,15 @@ homeassistant:
       initial_state: on
 
   customize_glob:
-    "*":
+
+    "switch.*":
+      hidden: true
+      homebridge_hidden: false
+
+    "sensor.*":
+      homebridge_hidden: true
+
+    "group.*":
       homebridge_hidden: true
 
     "device_tracker.*":
@@ -32,11 +40,6 @@ homeassistant:
     "script.*":
       hidden: true
       homebridge_hidden: true
-
-    "sensor.vipkid_*":
-      hidden: true
-      homebridge_hidden: true
-
 
 # 启用前端
 frontend:

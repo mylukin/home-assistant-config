@@ -133,3 +133,7 @@ sensor.chinese_calendar:
 
 sensor.vipkid:
   hidden: true
+
+sensor.illumination_7811dce1b4e9:
+  friendly_name: 网关灯亮度
+  hidden: true

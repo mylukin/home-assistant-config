@@ -1,0 +1,11 @@
+binary_sensor.door_window_sensor_158d00020e37c8:
+  friendly_name: 门窗传感器
+  hidden: true
+
+binary_sensor.motion_sensor_158d00023d15d6:
+  friendly_name: 移动传感器
+  hidden: true
+
+binary_sensor.switch_158d000231eec4:
+  friendly_name: 无线开关
+  hidden: true
