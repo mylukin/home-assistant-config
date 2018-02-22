@@ -5,10 +5,10 @@ automation.notify_sunset:
   friendly_name: 通知日落
 
 automation.notify_luvis_for_to_school:
-  friendly_name: 提醒卢想上学校
+  friendly_name: 提醒卢维斯上学校
 
 automation.notify_luvis_for_wake_up:
-  friendly_name: 提醒卢想起床了
+  friendly_name: 提醒卢维斯起床了
 
 automation.notify_weather_holiday:
   friendly_name: 节假日天气情况提醒
