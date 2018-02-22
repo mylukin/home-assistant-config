@@ -26,7 +26,7 @@ group.printer:
 group.all_automations:
   order: 6
   hidden: false
-  homebridge_hidden: false
+  homebridge_hidden: true
 
 group.history_graph:
   order: 7
