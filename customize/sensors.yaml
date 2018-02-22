@@ -1,139 +1,197 @@
 sensor.cpu_temperature:
   friendly_name: CPU 温度
+  hidden: false
+  homebridge_hidden: true
 
 sensor.gpu_temperature:
   friendly_name: GPU 温度
-
+  hidden: false
+  homebridge_hidden: true
 
 sensor.ping_google_cloud:
   friendly_name: 谷歌云丢包率
+  hidden: false
+  homebridge_hidden: true
 
 sensor.ping_dgc:
   friendly_name: DGC丢包率
+  hidden: false
+  homebridge_hidden: true
 
 sensor.ping_mofang_cloud:
   friendly_name: 魔方云丢包率
+  hidden: false
+  homebridge_hidden: true
 
 sensor.ping_router:
   friendly_name: 路由器丢包率
+  hidden: true
+  homebridge_hidden: true
 
 sensor.dht_sensor_humidity:
   friendly_name: 室内湿度(PI)
   icon: mdi:water-percent
   hidden: true
+  homebridge_hidden: true
 
 sensor.dht_sensor_temperature:
   friendly_name: 室内温度(PI)
   hidden: true
+  homebridge_hidden: true
 
 sensor.canon_lbp6030w_6018w:
   friendly_name: 打印机队列
+  hidden: false
+  homebridge_hidden: true
 
 sensor.fastcom_download:
   icon: mdi:speedometer
+  hidden: false
+  homebridge_hidden: true
 
 sensor.moji_weather_air_quality:
   friendly_name: 空气质量
   icon: mdi:cloud
   unit_of_measurement: AQI
+  hidden: false
+  homebridge_hidden: true
 
 sensor.waqi_shanghai_normal_college_primary_division_shanghai:
   friendly_name: 空气质量
+  unit_of_measurement: AQI
+  hidden: false
+  homebridge_hidden: false
 
 sensor.moji_weather_humidity:
   friendly_name: 室外湿度
   icon: mdi:water-percent
+  hidden: false
+  homebridge_hidden: true
 
 sensor.moji_weather_temperature:
   friendly_name: 室外温度
+  hidden: false
+  homebridge_hidden: true
 
 sensor.moji_weather_temperature_max:
   friendly_name: 最高温度
+  hidden: false
+  homebridge_hidden: true
 
 sensor.moji_weather_temperature_min:
   friendly_name: 最低温度
+  hidden: false
+  homebridge_hidden: true
 
 sensor.moji_weather_wind_grade:
   friendly_name: 风级
   unit_of_measurement: 级
+  hidden: false
+  homebridge_hidden: true
 
 sensor.moji_weather_tips:
-  hidden: true
   friendly_name: 天气提醒
+  hidden: true
+  homebridge_hidden: true
 
 sensor.moji_weather_condition:
   friendly_name: 今天天气
+  hidden: false
+  homebridge_hidden: true
 
 sensor.moji_weather_current:
   friendly_name: 当前天气
+  hidden: false
+  homebridge_hidden: true
 
 sensor.lukiniphone_battery_level:
   hidden: true
+  homebridge_hidden: true
 
 sensor.lukiniphone_battery_state:
   hidden: true
+  homebridge_hidden: true
 
 sensor.date:
   hidden: true
+  homebridge_hidden: true
 
 sensor.time:
   hidden: true
+  homebridge_hidden: true
 
 sensor.echo_dot_play_song_id:
-  hidden: true
   friendly_name: 正在播放的歌曲ID
+  hidden: true
+  homebridge_hidden: true
 
 sensor.echo_dot_play_song_title:
   friendly_name: 正在播放的歌曲标题
   hidden: true
-  homebridge_hidden: false
+  homebridge_hidden: true
 
 sensor.echo_dot_play_song_name:
-  hidden: false
   friendly_name: 正在播放的歌曲
+  hidden: true
+  homebridge_hidden: true
 
 sensor.echo_dot_play_song_author:
-  hidden: true
   friendly_name: 正在播放的歌曲作者
+  hidden: true
+  homebridge_hidden: true
 
 sensor.echo_dot_play_song_url:
-  hidden: true
   friendly_name: 正在播放的歌曲URL
+  hidden: true
+  homebridge_hidden: true
 
 sensor.echo_dot_play_song_list:
-  hidden: true
   friendly_name: 正在播放的歌曲列表
+  hidden: true
+  homebridge_hidden: true
 
 sensor.echo_dot_play_song_state:
-  hidden: true
   friendly_name: 播放器状态
+  hidden: true
+  homebridge_hidden: true
 
 sensor.living_room_air_quality:
+  friendly_name: 室内空气质量
   hidden: true
   homebridge_hidden: false
 
 sensor.living_room_dust:
+  friendly_name: 室内尘埃量
   hidden: true
   homebridge_hidden: false
 
 sensor.living_room_filter_life:
+  friendly_name: 过滤芯寿命
   hidden: true
+  homebridge_hidden: true
 
 sensor.living_room_humidity:
   friendly_name: 客厅湿度
   icon: mdi:water-percent
+  hidden: false
   homebridge_hidden: false
 
 sensor.living_room_temperature:
   friendly_name: 客厅温度
+  hidden: false
   homebridge_hidden: false
 
 sensor.chinese_calendar:
+  friendly_name: 法定节假日
   hidden: true
+  homebridge_hidden: true
 
 sensor.vipkid:
+  friendly_name: VIPKID
   hidden: true
+  homebridge_hidden: true
 
 sensor.illumination_7811dce1b4e9:
   friendly_name: 网关灯亮度
   hidden: true
+  homebridge_hidden: false

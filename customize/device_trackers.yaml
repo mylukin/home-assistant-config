@@ -1,29 +1,34 @@
 device_tracker.lukin:
   friendly_name: 卢现升
-  hidden: false
   icon: mdi:cellphone-iphone
+  hidden: false
+  homebridge_hidden: true
 
 device_tracker.smartisanu2pro:
   friendly_name: 卢现升
-  hidden: false
   icon: mdi:cellphone-android
+  hidden: false
+  homebridge_hidden: true
 
 device_tracker.liuyin:
   friendly_name: 刘银
-  hidden: false
   icon: mdi:cellphone-iphone
-
+  hidden: false
+  homebridge_hidden: true
 
 device_tracker.luke:
   friendly_name: 卢振
   hidden: false
+  homebridge_hidden: true
 
 device_tracker.lirui_iphone:
   friendly_name: 李蕊
   hidden: false
+  homebridge_hidden: true
 
 device_tracker.printer:
   friendly_name: 打印机
   icon: mdi:printer
   source_type: printer
   hidden: false
+  homebridge_hidden: true

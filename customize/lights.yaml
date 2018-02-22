@@ -1,3 +1,4 @@
 light.gateway_light_7811dce1b4e9:
   friendly_name: 网关灯
   hidden: true
+  homebridge_hidden: false

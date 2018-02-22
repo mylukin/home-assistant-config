@@ -1,26 +1,42 @@
 group.weather:
   order: 1
+  hidden: false
+  homebridge_hidden: true
 
 group.echo_dot:
   order: 2
+  hidden: false
+  homebridge_hidden: true
 
 group.system_monitor:
   order: 3
+  hidden: false
+  homebridge_hidden: true
 
 group.speedtest:
   order: 4
+  hidden: false
+  homebridge_hidden: true
 
 group.printer:
   order: 5
+  hidden: false
+  homebridge_hidden: true
 
 group.all_automations:
   order: 6
+  hidden: false
+  homebridge_hidden: false
 
 group.history_graph:
   order: 7
+  hidden: false
+  homebridge_hidden: true
 
 group.all_fans:
   hidden: true
+  homebridge_hidden: true
 
 group.all_scripts:
   hidden: true
+  homebridge_hidden: true

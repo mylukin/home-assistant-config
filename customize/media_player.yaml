@@ -1,2 +1,3 @@
 media_player.speaker_vlc:
   hidden: true
+  homebridge_hidden: true
