@@ -5,10 +5,10 @@
       to: 'on'
       for: '00:01:00'
 
-  condition:
-    - condition: state
-      entity_id: binary_sensor.motion_sensor_158d00023d15d6
-      state: 'off'
+  #condition:
+  #  - condition: state
+  #    entity_id: binary_sensor.motion_sensor_158d00023d15d6
+  #    state: 'off'
 
   action:
     - service: notify.open_the_door_to_room
