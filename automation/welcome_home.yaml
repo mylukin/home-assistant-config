@@ -17,7 +17,7 @@
     - service: tts.baidu_say
       data_template:
         entity_id: media_player.speaker_vlc
-        message: >
+        message: >-
           {% set person = trigger.entity_id.split('.')[1] %}
           {% set person = states.device_tracker[person].attributes.friendly_name %}
           {%- macro greeting_sentence(person) -%}
@@ -49,6 +49,19 @@
     for: 00:00:20
 
   action:
+    - service: notify.notify_to_wechat
+      data_template:
+        message: >-
+          {% set person = trigger.entity_id.split('.')[1] %}
+          {% set person = states.device_tracker[person].attributes.friendly_name %}
+          {%- macro greeting_sentence(person) -%}
+          {{ [
+            "猜猜是谁来了？是" ~ person,
+            "告诉你一个秘密，" ~ person + "来了！",
+          ] | random }}
+          {%- endmacro -%}
+          {{greeting_sentence(person)}}
+
     - service: script.set_vlc_volume
       data:
         value: 0.6
@@ -56,7 +69,7 @@
     - service: tts.baidu_say
       data_template:
         entity_id: media_player.speaker_vlc
-        message: >
+        message: >-
           {% set person = trigger.entity_id.split('.')[1] %}
           {% set person = states.device_tracker[person].attributes.friendly_name %}
           {%- macro greeting_sentence(person) -%}

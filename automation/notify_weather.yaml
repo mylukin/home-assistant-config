@@ -10,6 +10,36 @@
       state: 'workday'
 
   action:
+    - service: notify.notify_to_wechat
+      data_template:
+        message: >-
+          {%- for num in range(0,2) -%}
+            今天天气{{ states('sensor.moji_weather_condition') }}，当前气温
+            {{- states('sensor.moji_weather_temperature') }}度，当前天气
+            {{- states('sensor.moji_weather_current') }}，最高
+            {{- states('sensor.moji_weather_temperature_max') }}度，最低
+            {{- states('sensor.moji_weather_temperature_min') }}度，
+            {{- states('sensor.moji_weather_tips') -}}
+            空气质量：
+            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 50 -%}
+            优
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 100 -%}
+            良
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 150 -%}
+            轻度污染
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 200 -%}
+            中度污染
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 300 -%}
+            重度污染
+            {%- else -%}
+            严重污染
+            {% endif -%}
+
+            {%- if not loop.last -%}
+            ，
+            {%- endif -%}
+          {% endfor -%}
+
     - service: script.set_vlc_volume
       data:
         value: 0.6
@@ -65,6 +95,36 @@
       state: 'holiday'
 
   action:
+    - service: notify.notify_to_wechat
+      data_template:
+        message: >-
+          {%- for num in range(0,2) -%}
+            今天天气{{ states('sensor.moji_weather_condition') }}，当前气温
+            {{- states('sensor.moji_weather_temperature') }}度，当前天气
+            {{- states('sensor.moji_weather_current') }}，最高
+            {{- states('sensor.moji_weather_temperature_max') }}度，最低
+            {{- states('sensor.moji_weather_temperature_min') }}度，
+            {{- states('sensor.moji_weather_tips') -}}
+            空气质量：
+            {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 50 -%}
+            优
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 100 -%}
+            良
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 150 -%}
+            轻度污染
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 200 -%}
+            中度污染
+            {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 300 -%}
+            重度污染
+            {%- else -%}
+            严重污染
+            {% endif -%}
+
+            {%- if not loop.last -%}
+            ，
+            {%- endif -%}
+          {% endfor -%}
+
     - service: script.set_vlc_volume
       data:
         value: 0.6

@@ -81,6 +81,30 @@
           {%- endif -%}
 
   action:
+    - service: notify.notify_to_wechat
+      data_template:
+        message: >-
+          {{ [
+            "卢维斯，收拾好书包，要去上学校了！",
+            "卢先生，别看手机啦！快去送卢维斯上学啦！",
+            "太阳当空照，花儿对我笑，小鸟说，早早早，我要背上炸药包，我去炸学校，从来不迟到！",
+            "太阳当空照，花儿对我笑，小鸟说，早早早，我要背上小书包，我去上学校，从来不迟到！",
+          ] | random -}}
+          今天空气质量：
+          {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 50 -%}
+          优，出门不用戴口罩。
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 100 -%}
+          良，出门不用戴口罩。
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 150 -%}
+          轻度污染，要想活的久，带上口罩吧！
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 200 -%}
+          中度污染，要想活的久，带上口罩吧！
+          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 300 -%}
+          重度污染，警告！警告！警告！不带口罩真的会出人命的！
+          {%- else -%}
+          严重污染，警告！警告！警告！必须带上口罩！必须带上口罩！必须带上口罩！
+          {% endif -%}
+
     - service: script.set_vlc_volume
       data:
         value: 0.7
