@@ -276,6 +276,6 @@ notify:
   - platform: rest
     name: Open the Door to Room
     resource: 'http://192.168.199.8:4000/send2room'
-    method: POST
+    method: POST_JSON
     data:
       room: 小卢家
