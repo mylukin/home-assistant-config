@@ -148,8 +148,8 @@ logger:
     homeassistant.helpers.entity: warn
     custom_components.device_tracker.hiwifi: warn
     custom_components.sensor.moji_weather: warn
-    requests.packages.urllib3.connectionpool: debug
-    requests.packages.urllib3: debug
+    #requests.packages.urllib3.connectionpool: debug
+    #requests.packages.urllib3: debug
 
 # 记录到数据库中，有 history 和 logbook 去处理
 recorder:
