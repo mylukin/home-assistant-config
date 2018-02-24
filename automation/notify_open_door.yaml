@@ -11,4 +11,4 @@
       state: 'on'
 
   action:
-    - service: shell_command.test
+    - service: notify.open_the_door_to_room
