@@ -277,6 +277,7 @@ notify:
     name: Open the Door to Room
     resource: http://192.168.199.8:4000/send2user
     method: POST
+    message: 大门未关
     data_template:
       room: 小卢家
       text: >-
