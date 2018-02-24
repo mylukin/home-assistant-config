@@ -71,6 +71,9 @@ sun:
 # 激活iOS客户端
 ios:
 
+# timer
+timer:
+
 # 戴森设备
 dyson:
   username: !secret dyson_account_user_email
