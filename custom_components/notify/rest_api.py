@@ -15,6 +15,18 @@ from homeassistant.components.notify import (
 from homeassistant.const import (CONF_RESOURCE, CONF_METHOD, CONF_NAME)
 import homeassistant.helpers.config_validation as cv
 
+# 启用调试于 http.client 级别 (requests->urllib3->http.client)
+# 你将能看到 REQUEST，包括 HEADERS 和 DATA，以及包含 HEADERS 但不包含 DATA 的 RESPONSE。
+# 唯一缺少的是 response.body，它不会被 log 记录。
+from http.client import HTTPConnection
+HTTPConnection.debuglevel = 1
+# 初始化 logging，否则不会看到任何 requests 的输出。
+logging.basicConfig()
+logging.getLogger().setLevel(logging.DEBUG)
+requests_log = logging.getLogger("requests.packages.urllib3")
+requests_log.setLevel(logging.DEBUG)
+requests_log.propagate = True
+
 CONF_DATA = 'data'
 CONF_DATA_TEMPLATE = 'data_template'
 CONF_MESSAGE_PARAMETER_NAME = 'message_param_name'
