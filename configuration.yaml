@@ -275,3 +275,7 @@ notify:
     method: POST_JSON
     data:
       room: 小卢家
+
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.199.8:4000/login
