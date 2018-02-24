@@ -8,7 +8,7 @@
   condition:
     - condition: state
       entity_id: binary_sensor.motion_sensor_158d00023d15d6
-      state: 'on'
+      state: 'off'
 
   action:
     - service: notify.open_the_door_to_room
