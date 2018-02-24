@@ -275,9 +275,5 @@ notify:
 
   - platform: rest
     name: Open the Door to Room
-    resource: http://192.168.199.8:4000/send2user
+    resource: 'http://192.168.199.8:4000/send2room'
     method: POST
-    data_template:
-      room: 小卢家
-      message: >-
-        大门超过{{states.binary_sensor.door_window_sensor_158d00020e37c8.attributes['Open since']|int/60}}分钟未关闭
