@@ -108,7 +108,7 @@ class RestNotificationService(BaseNotificationService):
         if self._method == 'POST':
             response = requests.post(self._resource, data=data, timeout=10)
         elif self._method == 'POST_JSON':
-            _LOGGER.info('POST_JSON: {}',data)
+            _LOGGER.info('POST_JSON: %s', data)
             response = requests.post(self._resource, json=data, timeout=10, headers={
                 'Content-Type': 'application/json'
             })
