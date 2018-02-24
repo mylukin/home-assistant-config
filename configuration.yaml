@@ -73,6 +73,9 @@ ios:
 
 # timer
 timer:
+  door_open_five_minutes:
+    name: 'door open 5 minutes'
+    duration: '00:05:00'
 
 # 戴森设备
 dyson:
