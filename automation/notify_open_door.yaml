@@ -5,13 +5,13 @@
       to: 'on'
       for: '00:01:00'
 
-  #condition:
-  #  - condition: state
-  #    entity_id: binary_sensor.motion_sensor_158d00023d15d6
-  #    state: 'off'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.motion_sensor_158d00023d15d6
+      state: 'off'
 
   action:
-    - service: notify.open_the_door_to_room
+    - service: notify.notify_to_wechat
       data_template:
         message: >-
-          大门超过{{ states.binary_sensor.door_window_sensor_158d00020e37c8.attributes['Open since']|int/60 }}分钟未关闭
+          大门超过{{ (states.binary_sensor.door_window_sensor_158d00020e37c8.attributes['Open since'] | int / 60) | round }}分钟未关闭

@@ -276,7 +276,7 @@ notify:
     access_token_secret: !secret notify_twitter_access_token_secret
 
   - platform: rest_api
-    name: Open the Door to Room
+    name: Notify to Wechat
     resource: 'http://192.168.199.8:4000/send2room'
     method: POST_JSON
     data:
