@@ -39,3 +39,6 @@ automation.open_purifying_air:
 
 automation.close_purifying_air:
   friendly_name: 自动关闭空气净化器
+
+automation.notify_open_the_door_more_than_5_minutes:
+  friendly_name: 超过5分钟门没关通知微信
