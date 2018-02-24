@@ -259,14 +259,6 @@ panel_iframe:
     icon: mdi:cloud-download
     url: 'https://down.lukin.cn/'
 
-calendar:
-  - platform: caldav
-    url: https://cloud.lukin.cn/remote.php/dav/calendars/Lukin/personal/
-    username: lukin
-    password: !secret calendar_password
-    calendars:
-      - Personal
-
 notify:
   - platform: ios
 
