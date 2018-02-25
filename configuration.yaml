@@ -71,6 +71,29 @@ sun:
 # 激活iOS客户端
 ios:
 
+# cloud
+cloud:
+  alexa:
+    filter:
+      include_entities:
+        - group.all_lights
+        - group.all_switches
+        - group.all_fans
+      include_domains:
+        - light
+        - switch
+        - media_player
+        - automation
+
+    #entity_config:
+    #  switch.printer_switch_for_xiaomi:
+    #    name: Xiaomi Plug
+    #    display_categories: SMARTPLUG
+    #
+    #  switch.printer_switch_for_xiaomi_usb:
+    #    name: Xiaomi USB Plug
+    #    display_categories: SMARTPLUG
+
 # 戴森设备
 dyson:
   username: !secret dyson_account_user_email
