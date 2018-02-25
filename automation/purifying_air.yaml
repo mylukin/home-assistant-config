@@ -59,30 +59,37 @@
       data_template:
         entity_id: media_player.speaker_vlc
         message: >-
-          空气质量：
-          {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 50 -%}
+          {%- set air_aqi = states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int -%}
+          室外空气质量：
+          {%- if air_aqi <= 50 -%}
           优
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 100 -%}
+          {%- elif air_aqi <= 100 -%}
           良
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 150 -%}
+          {%- elif air_aqi <= 150 -%}
           轻度污染
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 200 -%}
+          {%- elif air_aqi <= 200 -%}
           中度污染
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 300 -%}
+          {%- elif air_aqi <= 300 -%}
           重度污染
           {%- else -%}
           严重污染
           {% endif -%}
+
           {%- if states('sensor.living_room_air_quality')|int > 3 -%}
-            ，室内空气：
+            ，室内空气质量：
             {%- if states('sensor.living_room_air_quality') | int <= 5 -%}
-            良
+            轻度污染
             {%- elif states('sensor.living_room_air_quality') | int <= 8 -%}
             中度污染
             {%- else -%}
             重度污染
             {% endif -%}
-            ，即将为你打开空气净化器，请关闭门窗。
+            ，即将为你打开空气净化器
+            {%- if air_aqi > 100 and is_state('binary_sensor.door_window_sensor_158d00022c5bae', 'on') -%}
+            ，请关闭门窗。
+            {%- elif air_aqi <= 100 and is_state('binary_sensor.door_window_sensor_158d00022c5bae', 'off') -%}
+            ，请打开门窗通风。
+            {%- endif -%}
           {%- endif -%}
 
     - delay: 00:00:05
@@ -161,29 +168,27 @@
       data_template:
         entity_id: media_player.speaker_vlc
         message: >-
-          空气质量：
-          {%- if states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 50 -%}
+          {%- set air_aqi = states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int -%}
+          室外空气质量：
+          {%- if air_aqi <= 50 -%}
           优
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 100 -%}
+          {%- elif air_aqi <= 100 -%}
           良
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 150 -%}
+          {%- elif air_aqi <= 150 -%}
           轻度污染
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 200 -%}
+          {%- elif air_aqi <= 200 -%}
           中度污染
-          {%- elif states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int <= 300 -%}
+          {%- elif air_aqi <= 300 -%}
           重度污染
           {%- else -%}
           严重污染
           {% endif -%}
-          ，室内空气：
-          {%- if states('sensor.living_room_air_quality') | int <=3 -%}
-          优，即将为你关闭空气净化器，请打开门窗。
-          {%- elif states('sensor.living_room_air_quality') | int <= 5 -%}
-          良
-          {%- elif states('sensor.living_room_air_quality') | int <= 8 -%}
-          中度污染
-          {%- else -%}
-          重度污染
+
+          {%- if states('sensor.living_room_air_quality') | int <=3 and states('sensor.living_room_dust') | int <=3 -%}
+          ，室内空气质量：优，即将为你关闭空气净化器
+            {%- if air_aqi <= 100 and is_state('binary_sensor.door_window_sensor_158d00022c5bae', 'off') -%}
+            ，请打开门窗。
+            {%- endif -%}
           {% endif -%}
 
     - delay: 00:00:05

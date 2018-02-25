@@ -5,7 +5,6 @@ system_monitor:
     - sensor.memory_free
     - sensor.disk_use_percent_
     - sensor.last_boot
-    - sensor.since_last_boot
     - sensor.cpu_temperature
     - sensor.gpu_temperature
     - sensor.ping_google_cloud

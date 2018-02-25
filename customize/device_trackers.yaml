@@ -4,7 +4,7 @@ device_tracker.lukin:
   hidden: false
   homebridge_hidden: true
 
-device_tracker.smartisanu2pro:
+device_tracker.smartisan_u2_pro:
   friendly_name: 卢现升
   icon: mdi:cellphone-android
   hidden: false
