@@ -84,6 +84,7 @@ cloud:
         - switch
         - media_player
         - automation
+        - fan
 
     #entity_config:
     #  switch.printer_switch_for_xiaomi:
