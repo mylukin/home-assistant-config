@@ -110,6 +110,12 @@ xiaomi_aqara:
     - host: 192.168.199.56
       key: !secret xiaomi_aqara_gateway_key
 
+# remote
+remote:
+  - platform: xiaomi_miio
+    host: 192.168.199.57
+    token: !secret xiaomi_ir_remote_token
+
 # ifttt
 ifttt:
   key: !secret ifttt_key
@@ -305,3 +311,4 @@ camera:
     name: Wechat Login
     still_image_url: http://192.168.199.8:4000/login
     mjpeg_url: http://192.168.199.8:4000/login
+
