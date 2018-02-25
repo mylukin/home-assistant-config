@@ -117,7 +117,14 @@ remote:
     token: !secret xiaomi_ir_remote_token
     slot: 1
     timeout: 30
-    hidden: false
+    hidden: true
+    commands:
+      tv_source:
+        command:
+          - raw:Z6VLADMCAACgBgAAxAgAAKcRAABIIwAA8KAAAPR4AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAQEBAQEBAAEAAQAAAQAAAAEAAQEAAQEBBQJGAkAA==
+      tv_enter:
+        command:
+          - raw:Z6VLADMCAACeBgAAxAgAAI8RAABfIwAA8KAAAPR4AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAQEBAQEBAAEBAAEAAQAAAAABAAEAAQEBBQJGAkAA==
 
 # ifttt
 ifttt:
@@ -181,9 +188,9 @@ logger:
     homeassistant.helpers.entity: warn
     custom_components.device_tracker.hiwifi: warn
     custom_components.sensor.moji_weather: warn
-    requests.packages.urllib3.connectionpool: warn
-    requests.packages.urllib3: warn
-    requests.packages.urllib3.http.client: warn
+    requests.packages.urllib3.connectionpool: error
+    requests.packages.urllib3: error
+    requests.packages.urllib3.http.client: error
 
 # 记录到数据库中，有 history 和 logbook 去处理
 recorder:
