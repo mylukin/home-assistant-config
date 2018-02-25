@@ -82,8 +82,8 @@
             {%- else -%}
             重度污染
             {% endif -%}
+            ，即将为你打开空气净化器，请关闭门窗。
           {%- endif -%}
-          ，即将为你打开空气净化器，请关闭门窗。
 
     - delay: 00:00:05
     - wait_template: >-
@@ -177,7 +177,7 @@
           {% endif -%}
           ，室内空气：
           {%- if states('sensor.living_room_air_quality') | int <=3 -%}
-          优
+          优，即将为你关闭空气净化器，请打开门窗。
           {%- elif states('sensor.living_room_air_quality') | int <= 5 -%}
           良
           {%- elif states('sensor.living_room_air_quality') | int <= 8 -%}
@@ -185,7 +185,6 @@
           {%- else -%}
           重度污染
           {% endif -%}
-          ，即将为你关闭空气净化器，请打开门窗。
 
     - delay: 00:00:05
     - wait_template: >-
