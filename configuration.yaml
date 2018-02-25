@@ -115,6 +115,9 @@ remote:
   - platform: xiaomi_miio
     host: 192.168.199.57
     token: !secret xiaomi_ir_remote_token
+    slot: 1
+    timeout: 30
+    hidden: false
 
 # ifttt
 ifttt:
@@ -178,9 +181,9 @@ logger:
     homeassistant.helpers.entity: warn
     custom_components.device_tracker.hiwifi: warn
     custom_components.sensor.moji_weather: warn
-    requests.packages.urllib3.connectionpool: debug
-    requests.packages.urllib3: debug
-    requests.packages.urllib3.http.client: debug
+    requests.packages.urllib3.connectionpool: warn
+    requests.packages.urllib3: warn
+    requests.packages.urllib3.http.client: warn
 
 # 记录到数据库中，有 history 和 logbook 去处理
 recorder:
