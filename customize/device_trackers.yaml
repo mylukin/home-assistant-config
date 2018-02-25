@@ -16,6 +16,12 @@ device_tracker.liuyin:
   hidden: false
   homebridge_hidden: true
 
+device_tracker.liu_jingli:
+  friendly_name: 刘敬莉
+  icon: mdi:cellphone-android
+  hidden: false
+  homebridge_hidden: true
+
 device_tracker.luke:
   friendly_name: 卢振
   hidden: false

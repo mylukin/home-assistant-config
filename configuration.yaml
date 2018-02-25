@@ -302,5 +302,6 @@ notify:
 
 camera:
   - platform: mjpeg
+    name: Wechat Login
     still_image_url: http://192.168.199.8:4000/login
     mjpeg_url: http://192.168.199.8:4000/login
