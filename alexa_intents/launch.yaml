@@ -126,10 +126,10 @@ amzn1.ask.skill.d90d6619-9232-40ce-b722-468f3bdf4ecc:
   action:
     service: automation.trigger
     data_template:
-      entity_id: automation.notify_weather
+      entity_id: automation.notify_weather_workday
 
 WeatherIntent:
   action:
     service: automation.trigger
     data_template:
-      entity_id: automation.notify_weather
+      entity_id: automation.notify_weather_workday
