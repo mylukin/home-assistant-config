@@ -278,4 +278,5 @@ notify:
 
 camera:
   - platform: mjpeg
+    still_image_url: http://192.168.199.8:4000/login
     mjpeg_url: http://192.168.199.8:4000/login
