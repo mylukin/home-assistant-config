@@ -20,8 +20,6 @@
       above: 3
       for: '00:05:00'
 
-
-
   condition:
     condition: and
     conditions:
@@ -40,24 +38,8 @@
             above: 3
 
   action:
-    - service: script.set_vlc_volume
+    - service: notify.notify_to_wechat
       data_template:
-        value: 0.6
-
-    # 9点到22点之间播放声音
-    - service: media_player.volume_mute
-      entity_id: media_player.speaker_vlc
-      data_template:
-        is_volume_muted: >-
-          {%- if now().strftime("%H")|int >= 9 and now().strftime("%H")|int < 21 -%}
-          false
-          {%- else -%}
-          true
-          {%- endif -%}
-
-    - service: tts.baidu_say
-      data_template:
-        entity_id: media_player.speaker_vlc
         message: >-
           {%- set air_aqi = states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int -%}
           室外空气质量：
@@ -91,13 +73,6 @@
             ，请打开门窗通风。
             {%- endif -%}
           {%- endif -%}
-
-    - delay: 00:00:05
-    - wait_template: >-
-        {{ not is_state('media_player.speaker_vlc', 'playing') }}
-
-    # 恢复播放器的音量
-    - service: script.set_volume_to_pre
 
     # 打开净化器
     - service: fan.turn_on
@@ -149,24 +124,8 @@
 
 
   action:
-    - service: script.set_vlc_volume
-      data:
-        value: 0.6
-
-    # 9点到22点之间播放声音
-    - service: media_player.volume_mute
-      entity_id: media_player.speaker_vlc
+    - service: notify.notify_to_wechat
       data_template:
-        is_volume_muted: >-
-          {%- if now().strftime("%H")|int >= 9 and now().strftime("%H")|int < 21 -%}
-          false
-          {%- else -%}
-          true
-          {%- endif -%}
-
-    - service: tts.baidu_say
-      data_template:
-        entity_id: media_player.speaker_vlc
         message: >-
           {%- set air_aqi = states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int -%}
           室外空气质量：
@@ -190,13 +149,6 @@
             ，请打开门窗。
             {%- endif -%}
           {% endif -%}
-
-    - delay: 00:00:05
-    - wait_template: >-
-        {{ not is_state('media_player.speaker_vlc', 'playing') }}
-
-    # 恢复播放器的音量
-    - service: script.set_volume_to_pre
 
     # 关闭净化器
     - service: fan.turn_off
