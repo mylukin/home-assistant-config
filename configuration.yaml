@@ -205,8 +205,7 @@ logger:
 
 # 记录到数据库中，有 history 和 logbook 去处理
 recorder:
-  purge_interval: 1
-  purge_keep_days: 365
+  purge_interval: 0
   db_url: !secret recorder_db_url
   exclude:
     domains:
