@@ -1,6 +1,6 @@
 # 调整音量为最大
 set_volume_to_max: >-
-  amixer -c 0 sset 'PCM',0 100% unmute;
+  amixer -c 0 sset 'PCM',0 75% unmute;
 
 # 保存当前音量
 save_player_current_volume: >-
