@@ -1,6 +1,6 @@
 # 调整音量为最大
 set_volume_to_max: >-
-  if [ -f /home/pi/hass/.shairport-status ] && [ $(cat /home/pi/hass/.shairport-status) == 'playing' ]; then echo "set_volume_to_max: "$(date +'%Y-%m-%d %X') >> /tmp/shairport-status.log; else amixer -c 0 sset 'PCM',0 90% unmute; fi
+  ./shell_scripts/set_volume_to_max.sh
 
 # 保存当前音量
 save_player_current_volume: >-
@@ -8,4 +8,4 @@ save_player_current_volume: >-
 
 # 调整回原来的音量
 set_player_volume_to_pre: >-
-  if [ -f /home/pi/hass/.shairport-status ] && [ $(cat /home/pi/hass/.shairport-status) == 'playing' ]; then echo "set_player_volume_to_pre: "$(date +'%Y-%m-%d %X') >> /tmp/shairport-status.log; else volume=$(cat /tmp/pre_volume.data) && amixer -c 0 sset 'PCM',0 ${volume}% unmute; fi
+  ./shell_scripts/set_player_volume_to_pre.sh
