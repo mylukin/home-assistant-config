@@ -195,3 +195,8 @@ sensor.illumination_7811dce1b4e9:
   friendly_name: 网关灯亮度
   hidden: true
   homebridge_hidden: false
+
+sensor.shairport_status:
+  friendly_name: AirPlay状态
+  hidden: false
+  homebridge_hidden: false

@@ -3,3 +3,4 @@ echo_dot:
   entities:
     - sensor.playlist
     - sensor.echo_dot_play_song_name
+    - sensor.shairport_status
