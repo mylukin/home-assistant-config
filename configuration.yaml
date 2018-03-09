@@ -182,7 +182,7 @@ mqtt:
 # 记录 Home Assistant 的运行日志
 logger:
   # 可能的日志严重程度是: notset, debug, info, warn, warning, error, fatal, critical
-  default: debug
+  default: info
   logs:
     aiohttp.access: critical
     aiohttp.server: critical
