@@ -1,0 +1,5 @@
+- platform: command_line
+  name: Shairport Status
+  command: >-
+    [ -f .shairport-status ] && cat .shairport-status || echo stop
+  scan_interval: 1
