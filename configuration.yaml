@@ -194,7 +194,7 @@ logger:
     homeassistant.components.http: warn
     homeassistant.components.media_player: warn
     homeassistant.components.recorder: warn
-    homeassistant.components.sensor.command_line: warn
+    homeassistant.components.sensor.command_line: debug
     homeassistant.helpers.script: warn
     homeassistant.helpers.entity: warn
     custom_components.device_tracker.hiwifi: warn
