@@ -11,6 +11,7 @@
 - [米家智能插座](https://www.mi.com/mj-socket/)
 - [Amazon Echo Dot](https://www.amazon.com/Amazon-Echo-Dot-Portable-Bluetooth-Speaker-with-Alexa-Black/dp/B01DFKC2SO)
 - [佳能（Canon） LBP 6018W 无线黑白激光打印机](https://item.jd.com/1160047.html)
+- [米家智能家庭套装](https://item.mi.com/1171600028.html)
 
 ## 自动化场景
 - 布谷鸟闹钟，每到整点，半点，模拟布谷鸟叫。
@@ -28,3 +29,4 @@
 - 周日 2:30，重启光猫路由器
 - 客人来的时候，语音提醒有来访者。
 - 检查VIPKID事件，提醒儿子上英语课。
+- 家中大门开启超过1分钟，并且家中无人，发送微信通知。
