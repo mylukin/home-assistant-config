@@ -23,6 +23,11 @@ sensor.ping_mofang_cloud:
   hidden: false
   homebridge_hidden: true
 
+sensor.ping_aliyun:
+  friendly_name: 阿里云丢包率
+  hidden: false
+  homebridge_hidden: true
+
 sensor.ping_router:
   friendly_name: 路由器丢包率
   hidden: true
