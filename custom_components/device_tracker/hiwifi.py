@@ -13,7 +13,7 @@ from homeassistant.components.device_tracker import (
     DOMAIN, PLATFORM_SCHEMA, DeviceScanner)
 from homeassistant.const import CONF_HOST, CONF_PASSWORD, CONF_USERNAME
 
-REQUIREMENTS = ['requests==2.14.2']
+REQUIREMENTS = ['requests==2.18.4']
 
 _LOGGER = logging.getLogger(__name__)
 
