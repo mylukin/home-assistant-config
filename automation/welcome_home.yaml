@@ -10,6 +10,11 @@
 
     for: 00:02:00
 
+  condition:
+    - condition: time
+      after: '07:00:00'
+      before: '22:00:00'
+
   action:
     - service: script.set_vlc_volume
       data:
@@ -48,6 +53,11 @@
     to: home
 
     for: 00:00:20
+
+  condition:
+    - condition: time
+      after: '07:00:00'
+      before: '22:00:00'
 
   action:
     - service: notify.notify_to_wechat
