@@ -30,6 +30,18 @@ homeassistant:
     "sensor.*":
       homebridge_hidden: true
 
+    "sensor.illumination_*":
+      hidden: true
+      homebridge_hidden: true
+
+    "binary_sensor.motion_sensor_*":
+      hidden: true
+      homebridge_hidden: true
+
+    "binary_sensor.switch_*":
+      hidden: true
+      homebridge_hidden: true
+
     "group.*":
       homebridge_hidden: true
 
@@ -319,17 +331,4 @@ notify:
     consumer_secret: !secret notify_twitter_consumer_secret
     access_token: !secret notify_twitter_access_token
     access_token_secret: !secret notify_twitter_access_token_secret
-
-  - platform: rest
-    name: Notify to Wechat
-    resource: 'http://192.168.199.8:4000/send2room'
-    method: POST_JSON
-    data:
-      room: 小卢家
-
-camera:
-  - platform: mjpeg
-    name: Wechat Login
-    still_image_url: http://192.168.199.8:4000/login
-    mjpeg_url: http://192.168.199.8:4000/login
 

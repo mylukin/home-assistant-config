@@ -4,7 +4,6 @@
     entity_id:
       - device_tracker.lukin
       - device_tracker.liuyin
-      - device_tracker.liu_jingli
     from: not_home
     to: home
 
@@ -49,6 +48,7 @@
     entity_id:
       - device_tracker.luke
       - device_tracker.lirui_iphone
+      - device_tracker.liu_jingli
     from: not_home
     to: home
 

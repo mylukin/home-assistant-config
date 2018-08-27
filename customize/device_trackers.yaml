@@ -19,17 +19,17 @@ device_tracker.liuyin:
 device_tracker.liu_jingli:
   friendly_name: 刘敬莉
   icon: mdi:cellphone-android
-  hidden: false
+  hidden: true
   homebridge_hidden: true
 
 device_tracker.luke:
   friendly_name: 卢振
-  hidden: false
+  hidden: true
   homebridge_hidden: true
 
 device_tracker.lirui_iphone:
   friendly_name: 李蕊
-  hidden: false
+  hidden: true
   homebridge_hidden: true
 
 device_tracker.printer:
