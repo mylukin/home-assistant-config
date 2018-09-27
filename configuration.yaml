@@ -60,9 +60,6 @@ frontend:
 # 启用配置界面
 config:
 
-# echo dot
-alexa_intent: !include_dir_merge_named alexa_intents
-
 # 检查可用的更新
 updater:
   include_used_components: true
@@ -85,30 +82,13 @@ ios:
 
 # 开启homekit 支持
 homekit:
-
-# cloud
-cloud:
-  alexa:
-    filter:
-      include_entities:
-        - group.all_lights
-        - group.all_switches
-        - group.all_fans
-      include_domains:
-        - light
-        - switch
-        - media_player
-        - automation
-        - fan
-
-    #entity_config:
-    #  switch.printer_switch_for_xiaomi:
-    #    name: Xiaomi Plug
-    #    display_categories: SMARTPLUG
-    #
-    #  switch.printer_switch_for_xiaomi_usb:
-    #    name: Xiaomi USB Plug
-    #    display_categories: SMARTPLUG
+  filter:
+    include_domains:
+      - light
+      - fan
+      - sensor
+      - switch
+      - cover
 
 # 戴森设备
 dyson:
