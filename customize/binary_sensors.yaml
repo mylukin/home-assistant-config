@@ -1,10 +1,10 @@
 binary_sensor.door_window_sensor_158d00020e37c8:
-  friendly_name: 大门窗传感器
+  friendly_name: 大门开关传感器
   hidden: true
   homebridge_hidden: false
 
 binary_sensor.door_window_sensor_158d00022c5bae:
-  friendly_name: 客厅窗传感器
+  friendly_name: 客厅窗开关传感器
   hidden: true
   homebridge_hidden: false
 
@@ -14,11 +14,11 @@ binary_sensor.motion_sensor_158d00023d15d6:
   homebridge_hidden: false
 
 binary_sensor.motion_sensor_158d000222eeb5:
-  friendly_name: 儿子房移动传感器
+  friendly_name: 卫生间移动传感器
   hidden: true
   homebridge_hidden: false
 
 binary_sensor.switch_158d000231eec4:
-  friendly_name: 无线门铃
+  friendly_name: 卧室无线开关
   hidden: true
   homebridge_hidden: false

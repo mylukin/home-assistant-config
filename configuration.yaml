@@ -83,6 +83,9 @@ sun:
 # 激活iOS客户端
 ios:
 
+# 开启homekit 支持
+homekit:
+
 # cloud
 cloud:
   alexa:
