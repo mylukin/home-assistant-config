@@ -98,6 +98,7 @@ homekit:
 dyson:
   username: !secret dyson_account_user_email
   password: !secret dyson_acount_password
+  language: GB
   devices:
     - device_id: NK6-CN-HFA1117A
       device_ip: 192.168.199.60
