@@ -5,6 +5,12 @@
       to: 'on'
 
   condition:
+    condition: and
+    conditions:
+    - condition: time
+      after: '07:00:00'
+      before: '22:00:00'
+
     - condition: numeric_state
       entity_id: sensor.illumination_158d000204a6f6
       below: 5
