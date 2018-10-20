@@ -1,4 +1,4 @@
-- alias: 'Turn on the light automatically'
+- alias: 'Turn on living room light automatically'
   trigger:
     - platform: state
       entity_id: binary_sensor.motion_sensor_158d00023d15d6
@@ -20,7 +20,7 @@
       entity_id: switch.wall_switch_right_158d00024aa64d
 
 
-- alias: 'Turn off the light automatically'
+- alias: 'Turn off living room light automatically'
   trigger:
     - platform: state
       entity_id: binary_sensor.motion_sensor_158d00023d15d6
