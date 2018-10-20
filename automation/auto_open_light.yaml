@@ -1,0 +1,26 @@
+- alias: 'Turn on the light automatically'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00023d15d6
+      to: 'on'
+
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.illumination_158d000204a6f6
+      below: 5
+
+  action:
+    - service: switch.turn_on
+      entity_id: switch.wall_switch_right_158d00024aa64d
+
+
+- alias: 'Turn off the light automatically'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d00023d15d6
+      to: 'off'
+      for: '00:30:00'
+
+  action:
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_right_158d00024aa64d
