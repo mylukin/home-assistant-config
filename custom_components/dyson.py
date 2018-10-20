@@ -17,6 +17,7 @@ REQUIREMENTS = ['https://github.com/mylukin/libpurecoollink/archive/master.zip#l
 
 _LOGGER = logging.getLogger(__name__)
 
+CONF_LANGUAGE = "language"
 CONF_RETRY = "retry"
 
 DEFAULT_TIMEOUT = 5
@@ -28,6 +29,7 @@ CONFIG_SCHEMA = vol.Schema({
     DOMAIN: vol.Schema({
         vol.Required(CONF_USERNAME): cv.string,
         vol.Required(CONF_PASSWORD): cv.string,
+        vol.Required(CONF_LANGUAGE): cv.string,
         vol.Optional(CONF_TIMEOUT, default=DEFAULT_TIMEOUT): cv.positive_int,
         vol.Optional(CONF_RETRY, default=DEFAULT_RETRY): cv.positive_int,
         vol.Optional(CONF_DEVICES, default=[]):
@@ -47,7 +49,8 @@ def setup(hass, config):
 
     from libpurecoollink.dyson import DysonAccount
     dyson_account = DysonAccount(config[DOMAIN].get(CONF_USERNAME),
-                                 config[DOMAIN].get(CONF_PASSWORD))
+                                 config[DOMAIN].get(CONF_PASSWORD),
+                                 config[DOMAIN].get(CONF_LANGUAGE))
 
     logged = dyson_account.login()
 
