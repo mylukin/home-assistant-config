@@ -8,16 +8,6 @@ sensor.gpu_temperature:
   hidden: false
   homebridge_hidden: true
 
-sensor.ping_google_cloud:
-  friendly_name: 谷歌云丢包率
-  hidden: false
-  homebridge_hidden: true
-
-sensor.ping_dgc:
-  friendly_name: DGC丢包率
-  hidden: false
-  homebridge_hidden: true
-
 sensor.ping_mofang_cloud:
   friendly_name: 魔方云丢包率
   hidden: false
@@ -122,41 +112,6 @@ sensor.date:
   homebridge_hidden: true
 
 sensor.time:
-  hidden: true
-  homebridge_hidden: true
-
-sensor.echo_dot_play_song_id:
-  friendly_name: 正在播放的歌曲ID
-  hidden: true
-  homebridge_hidden: true
-
-sensor.echo_dot_play_song_title:
-  friendly_name: 正在播放的歌曲标题
-  hidden: true
-  homebridge_hidden: true
-
-sensor.echo_dot_play_song_name:
-  friendly_name: 正在播放的歌曲
-  hidden: false
-  homebridge_hidden: true
-
-sensor.echo_dot_play_song_author:
-  friendly_name: 正在播放的歌曲作者
-  hidden: true
-  homebridge_hidden: true
-
-sensor.echo_dot_play_song_url:
-  friendly_name: 正在播放的歌曲URL
-  hidden: true
-  homebridge_hidden: true
-
-sensor.echo_dot_play_song_list:
-  friendly_name: 正在播放的歌曲列表
-  hidden: true
-  homebridge_hidden: true
-
-sensor.echo_dot_play_song_state:
-  friendly_name: 播放器状态
   hidden: true
   homebridge_hidden: true
 

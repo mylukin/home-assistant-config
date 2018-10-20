@@ -1,6 +1,7 @@
 system_monitor:
   name: 系统状态
   entities:
+    - sensor.shairport_status
     - sensor.load_1m
     - sensor.memory_free
     - sensor.disk_use_percent_

@@ -11,7 +11,7 @@
       state: 'off'
 
   action:
-    - service: notify.notify_to_wechat
+    - service: notify.ios_lukiniphone
       data_template:
         message: >-
           大门超过{{ (states.binary_sensor.door_window_sensor_158d00020e37c8.attributes['Open since'] | int / 60) | round }}分钟未关闭
