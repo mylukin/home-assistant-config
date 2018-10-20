@@ -49,8 +49,7 @@ def setup(hass, config):
 
     from libpurecoollink.dyson import DysonAccount
     dyson_account = DysonAccount(config[DOMAIN].get(CONF_USERNAME),
-                                 config[DOMAIN].get(CONF_PASSWORD),
-                                 config[DOMAIN].get(CONF_LANGUAGE))
+                                 config[DOMAIN].get(CONF_PASSWORD))
 
     logged = dyson_account.login()
 
