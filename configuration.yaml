@@ -49,6 +49,10 @@ homeassistant:
       hidden: true
       homebridge_hidden: true
 
+    "sensor.hiwifi_router_*":
+      hidden: true
+      homebridge_hidden: true
+
     "script.*":
       hidden: true
       homebridge_hidden: true

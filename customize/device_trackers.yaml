@@ -10,7 +10,7 @@ device_tracker.smartisan_u2_pro:
   hidden: false
   homebridge_hidden: true
 
-device_tracker.liuyin:
+device_tracker.liuyin_iphone:
   friendly_name: 刘银
   icon: mdi:cellphone-iphone
   hidden: false

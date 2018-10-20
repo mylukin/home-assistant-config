@@ -115,7 +115,7 @@ sensor.time:
   hidden: true
   homebridge_hidden: true
 
-sensor.living_room_air_quality:
+sensor.living_room_aqi:
   friendly_name: 室内空气质量
   hidden: true
   homebridge_hidden: false
