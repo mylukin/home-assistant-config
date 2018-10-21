@@ -13,7 +13,7 @@
 
     - condition: numeric_state
       entity_id: sensor.illumination_158d000204a6f6
-      below: 5
+      below: 15
 
   action:
     - service: switch.turn_on
