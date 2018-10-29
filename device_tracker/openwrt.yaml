@@ -2,4 +2,4 @@
   host: 192.168.199.1
   username: root
   password: !secret device_tracker_openwrt_password
-  ssl: true
+  ssl: false
