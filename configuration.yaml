@@ -146,6 +146,12 @@ media_player:
     # 扫描间隔1s，要不然状态反馈不及时，导致其他地方获取状态不正常。
     scan_interval: 1
 
+  # 蓝牙发声器
+  - platform: tts_bluetooth_speaker
+    name: speaker_tts_bluetooth
+    address: 7C:49:EB:68:4C:77
+    volume: 0.45
+
 # MQTT
 mqtt:
   embedded:
