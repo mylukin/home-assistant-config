@@ -1,10 +1,22 @@
 - alias: Home Assistant Start
   trigger:
-    platform: homeassistant
-    event: start
+    - platform: homeassistant
+      event: start
+
   action:
-    - delay: '00:00:10'
+    - delay: 00:00:10
+    - service: script.set_vlc_volume
+      data:
+        value: 0.7
+
     - service: tts.baidu_say
       data:
         entity_id: media_player.speaker_vlc
         message: '家庭助理已启动完成'
+
+    - delay: 00:00:05
+    - wait_template: >-
+        {{ not is_state('media_player.speaker_vlc', 'playing') }}
+
+    # 恢复播放器的音量
+    - service: script.set_volume_to_pre
