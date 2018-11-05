@@ -111,7 +111,7 @@ dyson:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
-    - host: 192.168.85.2
+    - host: 192.168.199.56
       key: !secret xiaomi_aqara_gateway_key
 
 # ifttt
@@ -225,47 +225,6 @@ history:
       - sun.sun
       - sensor.date
       - sensor.time
-
-# 曲线图
-history_graph:
-  # 丢包率统计
-  packet_loss:
-    name: Packet loss
-    entities:
-      - sensor.ping_google_cloud
-      - sensor.ping_dgc
-      - sensor.ping_mofang_cloud
-    hours_to_show: 24
-    refresh: 60
-
-  # 温度统计
-  temperature:
-    name: Temperature
-    entities:
-      - sensor.living_room_temperature
-      - sensor.dht_sensor_temperature
-      - sensor.moji_weather_temperature
-      - sensor.moji_weather_temperature_max
-      - sensor.moji_weather_temperature_min
-    hours_to_show: 24
-
-  # 湿度统计
-  humidity:
-    name: Humidity
-    entities:
-      - sensor.living_room_humidity
-      - sensor.moji_weather_humidity
-      - sensor.dht_sensor_humidity
-    hours_to_show: 24
-
-  # 下载速度
-  speedtest:
-    name: Speed test
-    entities:
-      - sensor.fastcom_download
-      - sensor.speedtest_download
-      - sensor.speedtest_upload
-    hours_to_show: 24
 
 group: !include_dir_merge_named group
 device_tracker: !include_dir_merge_list device_tracker
