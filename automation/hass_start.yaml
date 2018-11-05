@@ -12,7 +12,7 @@
     - service: tts.baidu_say
       data:
         entity_id: media_player.speaker_vlc
-        message: '家庭助理已启动完成'
+        message: '家庭助理启动成功'
 
     - delay: 00:00:05
     - wait_template: >-
