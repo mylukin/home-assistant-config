@@ -111,7 +111,7 @@ dyson:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
-    - host: 192.168.199.56
+    - host: 192.168.85.2
       key: !secret xiaomi_aqara_gateway_key
 
 # ifttt
