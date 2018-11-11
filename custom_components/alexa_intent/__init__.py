@@ -14,7 +14,7 @@ from homeassistant.helpers import (template, script, config_validation as cv)
 
 from . import intent
 
-REQUIREMENTS = ['requests==2.18.4']
+REQUIREMENTS = ['requests==2.20.1']
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -11,7 +11,7 @@ from homeassistant.const import (
     ATTR_ATTRIBUTION)
 from homeassistant.helpers.entity import Entity
 
-REQUIREMENTS = ['pyquery==1.4.0', 'requests==2.18.4']
+REQUIREMENTS = ['pyquery==1.4.0', 'requests==2.20.1']
 
 _LOGGER = logging.getLogger(__name__)
 
