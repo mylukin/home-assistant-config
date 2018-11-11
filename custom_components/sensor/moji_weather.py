@@ -137,5 +137,6 @@ class MojiWeatherSensor(Entity):
                 elif self._type == 'humidity':
                     self._state = re.sub(r'[^\d]', '', d('.wea_about span').text())
 
-        except:
+        except Exception as e:
+            _LOGGER.error("Request URL Error: {}".format(e))
             _LOGGER.error("Request Timeout URL: {}".format(tianqi_url))
