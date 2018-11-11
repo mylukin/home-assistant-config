@@ -18,6 +18,11 @@ sensor.ping_aliyun:
   hidden: false
   homebridge_hidden: true
 
+sensor.ping_banwagonhost:
+  friendly_name: 搬瓦工丢包率
+  hidden: false
+  homebridge_hidden: true
+
 sensor.ping_router:
   friendly_name: 路由器丢包率
   hidden: true
