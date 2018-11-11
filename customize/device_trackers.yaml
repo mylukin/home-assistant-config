@@ -1,16 +1,16 @@
-device_tracker.lukin:
+device_tracker.1c9148626b4c:
   friendly_name: 卢现升
   icon: mdi:cellphone-iphone
   hidden: false
   homebridge_hidden: true
 
-device_tracker.smartisan_u2_pro:
+device_tracker.lukindejianguopro:
   friendly_name: 卢现升
   icon: mdi:cellphone-android
   hidden: false
   homebridge_hidden: true
 
-device_tracker.liuyin_iphone:
+device_tracker.b841a4d1b8da:
   friendly_name: 刘银
   icon: mdi:cellphone-iphone
   hidden: false
