@@ -3,3 +3,4 @@
   username: root
   password: !secret device_tracker_openwrt_password
   dhcp_software: dnsmasq
+  interval_seconds: 5
