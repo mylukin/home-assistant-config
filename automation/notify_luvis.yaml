@@ -57,7 +57,7 @@
 - alias: 'Notify Luvis for to school'
   trigger:
     - platform: time
-      at: '07:50:00'
+      at: '07:45:00'
 
   condition:
     condition: and
