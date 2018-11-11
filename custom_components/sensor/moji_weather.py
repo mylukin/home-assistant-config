@@ -105,7 +105,7 @@ class MojiWeatherSensor(Entity):
         tianqi_url = "http://tianqi.moji.com/weather/china/shanghai/pudong-new-district"
         _LOGGER.info("URL: {}".format(tianqi_url))
         try:
-            resp = requests.get(tianqi_url)
+            resp = requests.get(tianqi_url, timeout=10)
             if resp.status_code == 200:
                 import re
                 from pyquery import PyQuery as pq
@@ -135,7 +135,7 @@ class MojiWeatherSensor(Entity):
                     self._code = d('.wea_alert img').attr('src')
                     self._state = re.sub(r'[^\d]', '', d('.wea_alert em').text())
                 elif self._type == 'humidity':
-                    self._state = re.sub(r'[^\d]', '', d( '.wea_about span' ).text())
+                    self._state = re.sub(r'[^\d]', '', d('.wea_about span').text())
 
         except:
             _LOGGER.error("Request Timeout URL: {}".format(tianqi_url))
