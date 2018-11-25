@@ -7,7 +7,6 @@
     - 18
 
 - platform: speedtest
-  server_id: 3633
   minute: 30
   hour:
     - 0
