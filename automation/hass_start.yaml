@@ -7,7 +7,7 @@
     - delay: 00:00:10
     - service: script.set_vlc_volume
       data:
-        value: 0.7
+        value: 0.8
 
     - service: tts.baidu_say
       data:

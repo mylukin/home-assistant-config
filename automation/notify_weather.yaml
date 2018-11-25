@@ -1,7 +1,7 @@
 - alias: 'Notify Weather Workday'
   trigger:
     - platform: time
-      at: '06:50:00'
+      at: '06:55:00'
 
   condition:
     # 工作日
@@ -42,7 +42,7 @@
 
     - service: script.set_vlc_volume
       data:
-        value: 0.6
+        value: 0.8
 
     - service: tts.baidu_say
       data_template:
@@ -127,7 +127,7 @@
 
     - service: script.set_vlc_volume
       data:
-        value: 0.6
+        value: 0.8
 
     - service: tts.baidu_say
       data_template:
