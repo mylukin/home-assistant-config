@@ -17,6 +17,4 @@
   token: !secret sensor_weather_waqi_token
   locations:
     - shanghai
-  stations:
-    - Shanghai Normal College Primary Division, Shanghai
   scan_interval: 1800
