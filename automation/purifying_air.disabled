@@ -6,7 +6,7 @@
       for: '00:05:00'
 
     - platform: numeric_state
-      entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
+      entity_id: sensor.waqi_huangpu_ruijin_shanghai
       above: 101
       for: '00:05:00'
 
@@ -41,7 +41,7 @@
     - service: notify.notify_to_wechat
       data_template:
         message: >-
-          {%- set air_aqi = states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int -%}
+          {%- set air_aqi = states('sensor.waqi_huangpu_ruijin_shanghai') | int -%}
           室外空气质量：
           {%- if air_aqi <= 50 -%}
           优
@@ -97,7 +97,7 @@
       for: '00:05:00'
 
     - platform: numeric_state
-      entity_id: sensor.waqi_shanghai_normal_college_primary_division_shanghai
+      entity_id: sensor.waqi_huangpu_ruijin_shanghai
       below: 100
       for: '00:05:00'
 
@@ -127,7 +127,7 @@
     - service: notify.notify_to_wechat
       data_template:
         message: >-
-          {%- set air_aqi = states('sensor.waqi_shanghai_normal_college_primary_division_shanghai') | int -%}
+          {%- set air_aqi = states('sensor.waqi_huangpu_ruijin_shanghai') | int -%}
           室外空气质量：
           {%- if air_aqi <= 50 -%}
           优

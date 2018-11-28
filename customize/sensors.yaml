@@ -56,7 +56,7 @@ sensor.moji_weather_air_quality:
   hidden: false
   homebridge_hidden: true
 
-sensor.waqi_shanghai_normal_college_primary_division_shanghai:
+sensor.waqi_huangpu_ruijin_shanghai:
   friendly_name: 空气质量
   unit_of_measurement: AQI
   hidden: false
