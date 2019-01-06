@@ -11,7 +11,7 @@ from homeassistant.helpers.entity import Entity
 
 import chinese_calendar as calendar
 
-REQUIREMENTS = ['chinesecalendar==1.0.3']
+REQUIREMENTS = ['chinesecalendar']
 
 _LOGGER = logging.getLogger(__name__)
 
