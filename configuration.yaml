@@ -16,10 +16,10 @@ homeassistant:
   # See: https://home-assistant.io/docs/configuration/customizing-devices/
   customize_domain:
     automation:
-      initial_state: 'on'
+      initial_state: true
 
     calendar:
-      initial_state: 'on'
+      initial_state: true
 
   customize_glob:
 
