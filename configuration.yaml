@@ -16,10 +16,10 @@ homeassistant:
   # See: https://home-assistant.io/docs/configuration/customizing-devices/
   customize_domain:
     automation:
-      initial_state: on
+      initial_state: 'on'
 
     calendar:
-      initial_state: on
+      initial_state: 'on'
 
   customize_glob:
 
@@ -265,5 +265,5 @@ camera:
     name: Camera
     host: '192.168.199.126'
     password: my_password_123
-    path: /tmp/sd/record/tmp.mp4.tmp
+    path: /tmp/sd/record
     ffmpeg_arguments: '-vf scale=800:450'
