@@ -1,4 +1,5 @@
 - alias: 'Restart Router'
+  initial_state: true
   trigger:
     - platform: time
       at: '02:30:00'

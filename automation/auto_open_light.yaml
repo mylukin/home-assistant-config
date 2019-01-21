@@ -1,4 +1,5 @@
 - alias: 'Turn on living room light automatically'
+  initial_state: true
   trigger:
     - platform: state
       entity_id: binary_sensor.motion_sensor_158d00023d15d6

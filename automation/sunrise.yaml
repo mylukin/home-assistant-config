@@ -1,4 +1,5 @@
 - alias: 'Notify Sunrise'
+  initial_state: true
   trigger:
     platform: sun
     event: sunrise

@@ -1,5 +1,6 @@
 # 模拟布谷鸟时钟，整点、半点报时
 - alias: Cuckoo Clock
+  initial_state: true
   trigger:
     - platform: time
       minutes: 00

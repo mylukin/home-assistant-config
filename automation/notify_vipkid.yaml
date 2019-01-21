@@ -1,4 +1,5 @@
 - alias: 'Notify VIPKID'
+  initial_state: false
   trigger:
     # 定时提醒
     - platform: time

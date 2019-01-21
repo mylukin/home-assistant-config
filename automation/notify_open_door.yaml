@@ -1,4 +1,5 @@
 - alias: 'Notify open the door more than 5 minutes'
+  initial_state: true
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d00020e37c8
