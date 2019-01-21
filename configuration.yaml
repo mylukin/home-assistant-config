@@ -265,5 +265,5 @@ camera:
     name: Camera
     host: '192.168.199.126'
     password: my_password_123
-	path: /tmp/sd/record/tmp.mp4.tmp
-	ffmpeg_arguments: '-vf scale=800:450'
+    path: /tmp/sd/record/tmp.mp4.tmp
+    ffmpeg_arguments: '-vf scale=800:450'
