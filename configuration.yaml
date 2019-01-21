@@ -264,6 +264,6 @@ camera:
   - platform: yi
     name: Camera
     host: '192.168.199.126'
-    password: my_password_123
+    password: ''
     path: /tmp/sd/record/tmp.mp4.tmp
     ffmpeg_arguments: '-vf scale=800:450'
