@@ -4,13 +4,9 @@ system_monitor:
     - sensor.shairport_status
     - sensor.load_1m
     - sensor.memory_free
-    - sensor.disk_use_percent_
     - sensor.last_boot
     - sensor.cpu_temperature
     - sensor.gpu_temperature
-    - sensor.ping_google_cloud
-    - sensor.ping_dgc
-    - sensor.ping_mofang_cloud
     - sensor.ping_aliyun
     - sensor.ping_banwagonhost
 

@@ -1,5 +1,0 @@
-printer:
-  name: 打印机
-  entities:
-    - device_tracker.canonc8b1e0lan
-    - sensor.canon_lbp6030w_6018w

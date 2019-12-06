@@ -11,10 +11,3 @@
     - air_quality
     - humidity
   scan_interval: 1800
-
-# 空气质量
-- platform: waqi
-  token: !secret sensor_weather_waqi_token
-  locations:
-    - shanghai
-  scan_interval: 1800

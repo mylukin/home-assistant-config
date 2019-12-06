@@ -11,14 +11,6 @@
   unit_of_measurement: "°C"
 
 - platform: command_line
-  name: Ping Mofang Cloud
-  command: >-
-    ping -c 10 103.95.207.114 | grep 'packet loss' | sed "s/.*received, //g" | sed "s/%.*$//g"
-  scan_interval: 60
-  timeout: 00:01:00
-  unit_of_measurement: "%"
-
-- platform: command_line
   name: Ping Aliyun
   command: >-
     ping -c 10 47.75.80.159 | grep 'packet loss' | sed "s/.*received, //g" | sed "s/%.*$//g"
