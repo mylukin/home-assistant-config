@@ -1,4 +1,4 @@
-- alias: 'Turn on living room light automatically'
+- alias: 'Turn on your living room light automatically'
   initial_state: true
   trigger:
     - platform: state
